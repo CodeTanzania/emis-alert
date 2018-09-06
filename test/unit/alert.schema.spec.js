@@ -33,6 +33,22 @@ describe('Alert', () => {
 
     });
 
+    it('should have issuedAt field', () => {
+
+      const issuedAt = Alert.schema.tree.issuedAt;
+      const instance = Alert.schema.paths.issuedAt.instance;
+
+      expect(instance).to.be.equal('Date');
+      expect(issuedAt).to.exist;
+      expect(issuedAt).to.be.an('object');
+      expect(issuedAt.type).to.be.a('function');
+      expect(issuedAt.type.name).to.be.equal('Date');
+      expect(issuedAt.required).to.be.true;
+      expect(issuedAt.index).to.be.true;
+      expect(issuedAt.fake).to.exist;
+
+    });
+
     it('should have title field', () => {
 
       const title = Alert.schema.tree.title;
