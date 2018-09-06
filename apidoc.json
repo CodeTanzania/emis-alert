@@ -1,0 +1,11 @@
+{
+  "name": "emis-alert",
+  "title": "EMIS - Alert",
+  "url": "https://emis-alert.herokuapp.com/v1",
+  "sampleUrl": "https://emis-alert.herokuapp.com/v1",
+  "template":
+  {
+    "withCompare": true,
+    "withGenerator": true
+  }
+}

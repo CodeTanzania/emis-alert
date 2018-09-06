@@ -1,0 +1,29 @@
+{
+  "name": "emis-alert",
+  "description": "A representation of an entity which provides(or receives) notifications to(or from) source(s).",
+  "repository": "https://github.com/CodeTanzania/emis-alert.git",
+  "keywords": [
+    "codetanzania",
+    "emis",
+    "emis-module",
+    "alert",
+    "incident",
+    "hazard",
+    "emergency",
+    "warning"
+  ],
+  "addons": [
+    "mongolab"
+  ],
+  "env":
+  {
+    "NPM_CONFIG_PRODUCTION":
+    {
+      "value": "false"
+    },
+    "YARN_PRODUCTION":
+    {
+      "value": "false"
+    }
+  }
+}

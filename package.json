@@ -1,0 +1,77 @@
+{
+  "name": "@codetanzania/emis-alert",
+  "version": "1.0.0",
+  "description": "A representation of an entity which provides(or receives) notifications to(or from) source(s).",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test",
+    "integration": "grunt integration",
+    "dev": "BASE_PATH=./examples node ./examples/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodeTanzania/emis-alert.git"
+  },
+  "keywords": [
+    "codetanzania",
+    "emis",
+    "emis-module",
+    "alert",
+    "incident",
+    "hazard",
+    "emergency",
+    "warning"
+  ],
+  "contributors": [{
+      "name": "lykmapipo",
+      "email": "lallyelias87@gmail.com",
+      "url": "https://github.com/lykmapipo"
+    },
+    {
+      "name": "benMaruchu",
+      "email": "benmaruchu@gmail.com",
+      "url": "https://github.com/BenMaruchu"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodeTanzania/emis-alert/issues",
+    "email": "lallyelias87@gmail.com"
+  },
+  "homepage": "https://github.com/CodeTanzania/emis-alert",
+  "sandbox": {
+    "url": "https://emis-alert.herokuapp.com/v1/alerts"
+  },
+  "devDependencies": {
+    "@benmaruchu/faker": "^4.2.1",
+    "chai": "^4.1.2",
+    "grunt": "^1.0.3",
+    "grunt-apidoc": "^0.11.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-mocha-test": "^0.13.3",
+    "jshint-stylish": "^2.2.1",
+    "mocha": "^5.2.0",
+    "mongoose": "^5.2.13",
+    "sinon": "^6.2.0",
+    "sinon-chai": "^3.2.0",
+    "sinon-mongoose": "^2.2.1",
+    "superagent": "^3.8.3",
+    "supertest": "^3.2.0"
+  },
+  "dependencies": {
+    "@codetanzania/majifix-common": "^0.9.0",
+    "@lykmapipo/express-common": "^0.9.1",
+    "async": "^2.6.1",
+    "express": "^4.16.3",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
+    "mongoose-locale-schema": "^0.2.0",
+    "mongoose-rest-actions": "^0.16.0",
+    "randomcolor": "^0.5.3"
+  },
+  "engines": {
+    "node": ">=8.11.1",
+    "npm": ">=5.6.0"
+  }
+}
