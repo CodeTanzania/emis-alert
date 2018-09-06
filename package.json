@@ -20,9 +20,11 @@
     "incident",
     "hazard",
     "emergency",
-    "warning"
+    "warning",
+    "disaster"
   ],
-  "contributors": [{
+  "contributors": [
+    {
       "name": "lykmapipo",
       "email": "lallyelias87@gmail.com",
       "url": "https://github.com/lykmapipo"
@@ -57,7 +59,7 @@
     "sinon-chai": "^3.2.0",
     "sinon-mongoose": "^2.2.1",
     "superagent": "^3.8.3",
-    "supertest": "^3.2.0"
+    "supertest": "^3.3.0"
   },
   "dependencies": {
     "@codetanzania/majifix-common": "^0.9.0",

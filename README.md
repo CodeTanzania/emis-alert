@@ -35,10 +35,10 @@ app.start(function (error) {
 ```
 
 ## References
-- [Disaster](https://en.wikipedia.org/wiki/Disaster)
-- [IRDR Peril Classification and Hazard Glossary](http://www.irdrinternational.org/wp-content/uploads/2014/04/IRDR_DATA-Project-Report-No.-1.pdf)
-- [EM-DAT Guidelines](https://www.emdat.be/guidelines)
-- [Glide Number](http://www.glidenumber.net/glide/public/search/search.jsp?)
+- [Common Alerting Protocol](https://en.wikipedia.org/wiki/Common_Alerting_Protocol)
+- [CAP-v1.2-PR03](http://docs.oasis-open.org/emergency/cap/v1.2/pr03/CAP-v1.2-PR03.pdf)
+- [Google Public Alerts CAP v1.0](https://developers.google.com/public-alerts/reference/cap-google)
+- [Guidelines for Implementation CAP](https://library.wmo.int/pmb_ged/wmo_1109_en.pdf)
 
 ## Testing
 
