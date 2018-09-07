@@ -123,6 +123,23 @@ describe('Alert', () => {
 
     });
 
+    it('should have restriction field', () => {
+
+      const restriction = Alert.schema.tree.restriction;
+      const instance = Alert.schema.paths.restriction.instance;
+
+      expect(instance).to.be.equal('String');
+      expect(restriction).to.exist;
+      expect(restriction).to.be.an('object');
+      expect(restriction.type).to.be.a('function');
+      expect(restriction.type.name).to.be.equal('String');
+      expect(restriction.trim).to.be.true;
+      expect(restriction.index).to.be.true;
+      expect(restriction.searchable).to.be.true;
+      expect(restriction.fake).to.exist;
+
+    });
+
     it('should have title field', () => {
 
       const title = Alert.schema.tree.title;
