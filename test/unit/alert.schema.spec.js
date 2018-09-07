@@ -150,7 +150,6 @@ describe('Alert', () => {
       expect(addresses).to.be.an('object');
       expect(addresses.type[0]).to.be.a('function');
       expect(addresses.type[0].name).to.be.equal('String');
-      expect(addresses.trim).to.be.true;
       expect(addresses.index).to.be.true;
       expect(addresses.searchable).to.be.true;
       expect(addresses.fake).to.exist;
@@ -203,7 +202,6 @@ describe('Alert', () => {
       expect(references).to.be.an('object');
       expect(references.type[0]).to.be.a('function');
       expect(references.type[0].name).to.be.equal('String');
-      expect(references.trim).to.be.true;
       expect(references.index).to.be.true;
       expect(references.searchable).to.be.true;
       expect(references.fake).to.exist;
@@ -220,7 +218,6 @@ describe('Alert', () => {
       expect(incidents).to.be.an('object');
       expect(incidents.type[0]).to.be.a('function');
       expect(incidents.type[0].name).to.be.equal('String');
-      expect(incidents.trim).to.be.true;
       expect(incidents.index).to.be.true;
       expect(incidents.searchable).to.be.true;
       expect(incidents.fake).to.exist;
