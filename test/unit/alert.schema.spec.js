@@ -104,6 +104,25 @@ describe('Alert', () => {
 
     });
 
+    it('should have scope field', () => {
+
+      const scope = Alert.schema.tree.scope;
+      const instance = Alert.schema.paths.scope.instance;
+
+      expect(instance).to.be.equal('String');
+      expect(scope).to.exist;
+      expect(scope).to.be.an('object');
+      expect(scope.type).to.be.a('function');
+      expect(scope.type.name).to.be.equal('String');
+      expect(scope.trim).to.be.true;
+      expect(scope.required).to.be.true;
+      expect(scope.index).to.be.true;
+      expect(scope.searchable).to.be.true;
+      expect(scope.enum).to.exist;
+      expect(scope.fake).to.exist;
+
+    });
+
     it('should have title field', () => {
 
       const title = Alert.schema.tree.title;
