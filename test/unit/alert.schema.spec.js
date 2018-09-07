@@ -140,6 +140,23 @@ describe('Alert', () => {
 
     });
 
+    it('should have addresses field', () => {
+
+      const addresses = Alert.schema.tree.addresses;
+      const instance = Alert.schema.paths.addresses.instance;
+
+      expect(instance).to.be.equal('Array');
+      expect(addresses).to.exist;
+      expect(addresses).to.be.an('object');
+      expect(addresses.type[0]).to.be.a('function');
+      expect(addresses.type[0].name).to.be.equal('String');
+      expect(addresses.trim).to.be.true;
+      expect(addresses.index).to.be.true;
+      expect(addresses.searchable).to.be.true;
+      expect(addresses.fake).to.exist;
+
+    });
+
     it('should have title field', () => {
 
       const title = Alert.schema.tree.title;
