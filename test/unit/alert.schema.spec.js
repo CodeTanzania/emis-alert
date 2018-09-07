@@ -227,6 +227,24 @@ describe('Alert', () => {
 
     });
 
+    it('should have language field', () => {
+
+      const language = Alert.schema.tree.language;
+      const instance = Alert.schema.paths.language.instance;
+
+      expect(instance).to.be.equal('String');
+      expect(language).to.exist;
+      expect(language).to.be.an('object');
+      expect(language.type).to.be.a('function');
+      expect(language.type.name).to.be.equal('String');
+      expect(language.trim).to.be.true;
+      expect(language.required).to.be.true;
+      expect(language.index).to.be.true;
+      expect(language.searchable).to.be.true;
+      expect(language.fake).to.exist;
+
+    });
+
     it('should have title field', () => {
 
       const title = Alert.schema.tree.title;
