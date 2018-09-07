@@ -33,24 +33,6 @@ describe('Alert', () => {
 
     });
 
-    it('should have source field', () => {
-
-      const source = Alert.schema.tree.source;
-      const instance = Alert.schema.paths.source.instance;
-
-      expect(instance).to.be.equal('String');
-      expect(source).to.exist;
-      expect(source).to.be.an('object');
-      expect(source.type).to.be.a('function');
-      expect(source.type.name).to.be.equal('String');
-      expect(source.trim).to.be.true;
-      expect(source.required).to.be.true;
-      expect(source.index).to.be.true;
-      expect(source.searchable).to.be.true;
-      expect(source.fake).to.exist;
-
-    });
-
     it('should have issuedAt field', () => {
 
       const issuedAt = Alert.schema.tree.issuedAt;
@@ -83,6 +65,42 @@ describe('Alert', () => {
       expect(status.searchable).to.be.true;
       expect(status.enum).to.exist;
       expect(status.fake).to.exist;
+
+    });
+
+    it('should have type field', () => {
+
+      const type = Alert.schema.tree.type;
+      const instance = Alert.schema.paths.type.instance;
+
+      expect(instance).to.be.equal('String');
+      expect(type).to.exist;
+      expect(type).to.be.an('object');
+      expect(type.type).to.be.a('function');
+      expect(type.type.name).to.be.equal('String');
+      expect(type.trim).to.be.true;
+      expect(type.required).to.be.true;
+      expect(type.index).to.be.true;
+      expect(type.searchable).to.be.true;
+      expect(type.fake).to.exist;
+
+    });
+
+    it('should have source field', () => {
+
+      const source = Alert.schema.tree.source;
+      const instance = Alert.schema.paths.source.instance;
+
+      expect(instance).to.be.equal('String');
+      expect(source).to.exist;
+      expect(source).to.be.an('object');
+      expect(source.type).to.be.a('function');
+      expect(source.type.name).to.be.equal('String');
+      expect(source.trim).to.be.true;
+      expect(source.required).to.be.true;
+      expect(source.index).to.be.true;
+      expect(source.searchable).to.be.true;
+      expect(source.fake).to.exist;
 
     });
 
