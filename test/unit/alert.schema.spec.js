@@ -157,6 +157,76 @@ describe('Alert', () => {
 
     });
 
+    it('should have code field', () => {
+
+      const code = Alert.schema.tree.code;
+      const instance = Alert.schema.paths.code.instance;
+
+      expect(instance).to.be.equal('String');
+      expect(code).to.exist;
+      expect(code).to.be.an('object');
+      expect(code.type).to.be.a('function');
+      expect(code.type.name).to.be.equal('String');
+      expect(code.trim).to.be.true;
+      expect(code.required).to.be.true;
+      expect(code.index).to.be.true;
+      expect(code.searchable).to.be.true;
+      expect(code.fake).to.exist;
+
+    });
+
+    it('should have note field', () => {
+
+      const note = Alert.schema.tree.note;
+      const instance = Alert.schema.paths.note.instance;
+
+      expect(instance).to.be.equal('String');
+      expect(note).to.exist;
+      expect(note).to.be.an('object');
+      expect(note.type).to.be.a('function');
+      expect(note.type.name).to.be.equal('String');
+      expect(note.trim).to.be.true;
+      expect(note.required).to.be.true;
+      expect(note.index).to.be.true;
+      expect(note.searchable).to.be.true;
+      expect(note.fake).to.exist;
+
+    });
+
+    it('should have references field', () => {
+
+      const references = Alert.schema.tree.references;
+      const instance = Alert.schema.paths.references.instance;
+
+      expect(instance).to.be.equal('Array');
+      expect(references).to.exist;
+      expect(references).to.be.an('object');
+      expect(references.type[0]).to.be.a('function');
+      expect(references.type[0].name).to.be.equal('String');
+      expect(references.trim).to.be.true;
+      expect(references.index).to.be.true;
+      expect(references.searchable).to.be.true;
+      expect(references.fake).to.exist;
+
+    });
+
+    it('should have incidents field', () => {
+
+      const incidents = Alert.schema.tree.incidents;
+      const instance = Alert.schema.paths.incidents.instance;
+
+      expect(instance).to.be.equal('Array');
+      expect(incidents).to.exist;
+      expect(incidents).to.be.an('object');
+      expect(incidents.type[0]).to.be.a('function');
+      expect(incidents.type[0].name).to.be.equal('String');
+      expect(incidents.trim).to.be.true;
+      expect(incidents.index).to.be.true;
+      expect(incidents.searchable).to.be.true;
+      expect(incidents.fake).to.exist;
+
+    });
+
     it('should have title field', () => {
 
       const title = Alert.schema.tree.title;
