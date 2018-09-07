@@ -36,6 +36,7 @@ app.start(function (error) {
 
 ## References
 - [Common Alerting Protocol](https://en.wikipedia.org/wiki/Common_Alerting_Protocol)
+- [Common Alerting Protocol Version 1.2](http://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html)
 - [CAP-v1.2-PR03](http://docs.oasis-open.org/emergency/cap/v1.2/pr03/CAP-v1.2-PR03.pdf)
 - [Google Public Alerts CAP v1.0](https://developers.google.com/public-alerts/reference/cap-google)
 - [Guidelines for Implementation CAP](https://library.wmo.int/pmb_ged/wmo_1109_en.pdf)

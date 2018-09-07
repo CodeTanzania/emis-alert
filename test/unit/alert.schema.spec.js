@@ -15,6 +15,24 @@ describe('Alert', () => {
 
   describe('Schema', () => {
 
+    it('should have sender field', () => {
+
+      const sender = Alert.schema.tree.sender;
+      const instance = Alert.schema.paths.sender.instance;
+
+      expect(instance).to.be.equal('String');
+      expect(sender).to.exist;
+      expect(sender).to.be.an('object');
+      expect(sender.type).to.be.a('function');
+      expect(sender.type.name).to.be.equal('String');
+      expect(sender.trim).to.be.true;
+      expect(sender.required).to.be.true;
+      expect(sender.index).to.be.true;
+      expect(sender.searchable).to.be.true;
+      expect(sender.fake).to.exist;
+
+    });
+
     it('should have source field', () => {
 
       const source = Alert.schema.tree.source;
@@ -46,6 +64,25 @@ describe('Alert', () => {
       expect(issuedAt.required).to.be.true;
       expect(issuedAt.index).to.be.true;
       expect(issuedAt.fake).to.exist;
+
+    });
+
+    it('should have status field', () => {
+
+      const status = Alert.schema.tree.status;
+      const instance = Alert.schema.paths.status.instance;
+
+      expect(instance).to.be.equal('String');
+      expect(status).to.exist;
+      expect(status).to.be.an('object');
+      expect(status.type).to.be.a('function');
+      expect(status.type.name).to.be.equal('String');
+      expect(status.trim).to.be.true;
+      expect(status.required).to.be.true;
+      expect(status.index).to.be.true;
+      expect(status.searchable).to.be.true;
+      expect(status.enum).to.exist;
+      expect(status.fake).to.exist;
 
     });
 
