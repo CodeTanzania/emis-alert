@@ -38,7 +38,7 @@ describe('Alert', () => {
 
       const options = {
         _id: alert._id,
-        select: 'title'
+        select: 'event'
       };
 
       Alert
@@ -46,7 +46,7 @@ describe('Alert', () => {
           expect(error).to.not.exist;
           expect(found).to.exist;
           expect(found._id).to.eql(alert._id);
-          expect(found.title).to.exist;
+          expect(found.event).to.exist;
 
           //...assert selection
           const fields = _.keys(found.toObject());

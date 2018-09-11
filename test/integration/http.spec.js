@@ -38,7 +38,7 @@ describe('Incident Type', () => {
           const created = response.body;
 
           expect(created._id).to.exist;
-          expect(created.title).to.exist;
+          expect(created.event).to.exist;
 
           done(error, response);
 
@@ -85,7 +85,7 @@ describe('Incident Type', () => {
           const found = response.body;
           expect(found._id).to.exist;
           expect(found._id).to.be.equal(alert._id.toString());
-          expect(found.title).to.be.equal(alert.title);
+          expect(found.event).to.be.equal(alert.event);
 
           done(error, response);
 
@@ -111,7 +111,7 @@ describe('Incident Type', () => {
 
           expect(patched._id).to.exist;
           expect(patched._id).to.be.equal(alert._id.toString());
-          expect(patched.title).to.be.equal(alert.title);
+          expect(patched.event).to.be.equal(alert.event);
 
           done(error, response);
 
@@ -137,7 +137,7 @@ describe('Incident Type', () => {
 
           expect(updated._id).to.exist;
           expect(updated._id).to.be.equal(alert._id.toString());
-          expect(updated.title).to.be.equal(alert.title);
+          expect(updated.event).to.be.equal(alert.event);
 
           done(error, response);
 
@@ -159,7 +159,7 @@ describe('Incident Type', () => {
 
           expect(deleted._id).to.exist;
           expect(deleted._id).to.be.equal(alert._id.toString());
-          expect(deleted.title).to.be.equal(alert.title);
+          expect(deleted.event).to.be.equal(alert.event);
 
           done(error, response);
 
