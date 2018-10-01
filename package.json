@@ -1,0 +1,95 @@
+{
+  "name": "@codetanzania/emis-alert",
+  "version": "1.0.0",
+  "description": "A representation of an envelope(or payload) which carries disaster notifications(or warning) from source(s) to audience(s).",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test",
+    "integration": "grunt integration",
+    "dev": "BASE_PATH=./examples node ./examples/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodeTanzania/emis-alert.git"
+  },
+  "keywords": [
+    "codetanzania",
+    "emis",
+    "emis-module",
+    "alert",
+    "incident",
+    "hazard",
+    "risk",
+    "emergency",
+    "warning",
+    "disaster",
+    "notification"
+  ],
+  "contributors": [
+    {
+      "name": "lykmapipo",
+      "email": "lallyelias87@gmail.com",
+      "url": "https://github.com/lykmapipo"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodeTanzania/emis-alert/issues",
+    "email": "lallyelias87@gmail.com"
+  },
+  "homepage": "https://github.com/CodeTanzania/emis-alert",
+  "sandbox": {
+    "url": "https://emis-alert.herokuapp.com",
+    "apiDoc": "https://codetanzania.github.io/emis-alert/",
+    "client_id": "",
+    "client_secret": "",
+    "urls": [
+      {
+        "resource": "IncidentType",
+        "link": "https://emis-alert.herokuapp.com/v1/alert",
+        "scopes": [
+          "alert:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
+      }
+    ]
+  },
+  "devDependencies": {
+    "@benmaruchu/faker": "^4.2.1",
+    "chai": "^4.2.0",
+    "grunt": "^1.0.3",
+    "grunt-apidoc": "^0.11.0",
+    "grunt-contrib-jshint": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-mocha-test": "^0.13.3",
+    "jshint-stylish": "^2.2.1",
+    "mocha": "^5.2.0",
+    "mongoose": "^5.3.0",
+    "sinon": "^6.3.4",
+    "sinon-chai": "^3.2.0",
+    "sinon-mongoose": "^2.2.1",
+    "supertest": "^3.3.0"
+  },
+  "dependencies": {
+    "@codetanzania/majifix-common": "^0.10.0",
+    "@lykmapipo/express-common": "^0.9.1",
+    "async": "^2.6.1",
+    "convert-units": "^2.3.4",
+    "express": "^4.16.3",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "mongoose-geojson-schemas": "^0.8.0",
+    "mongoose-locale-schema": "^0.2.0",
+    "mongoose-rest-actions": "^0.18.0",
+    "randomcolor": "^0.5.3"
+  },
+  "engines": {
+    "node": ">=8.11.1",
+    "npm": ">=5.6.0"
+  }
+}

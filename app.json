@@ -1,0 +1,32 @@
+{
+  "name": "emis-alert",
+  "description": "A representation of an envelope(or payload) which carries disaster notifications(or warning) from source(s) to audience(s).",
+  "repository": "https://github.com/CodeTanzania/emis-alert.git",
+  "keywords": [
+    "codetanzania",
+    "emis",
+    "emis-module",
+    "alert",
+    "incident",
+    "hazard",
+    "risk",
+    "emergency",
+    "warning",
+    "disaster",
+    "notification"
+  ],
+  "addons": [
+    "mongolab"
+  ],
+  "env":
+  {
+    "NPM_CONFIG_PRODUCTION":
+    {
+      "value": "false"
+    },
+    "YARN_PRODUCTION":
+    {
+      "value": "false"
+    }
+  }
+}
