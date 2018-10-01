@@ -6,6 +6,10 @@
 
 A representation of an envelope(or payload) which carries disaster notifications(or warning) from source(s) to audience(s).
 
+[Demo](https://emis-alert.herokuapp.com/v1/alerts)
+
+## Domain Model
+
 ![EMIS Alert Domain Model](https://raw.githubusercontent.com/CodeTanzania/emis-alert/develop/specifications/capv0.1.0.png)
 
 ## Requirements
@@ -24,14 +28,8 @@ npm install @codetanzania/emis-alert --save
 ## Usage
 
 ```js
-const mongoose = require('mongoose');
 const { app } = require('@codetanzania/emis-alert');
-
-mongoose.connect(process.env.MONGODB_URI);
-
-app.start(function (error) {
-  ...
-});
+app.start((error) => { ... });
 ```
 
 ## References
