@@ -25,17 +25,15 @@ describe('Alert', () => {
     });
 
     it('should be able to get an instance', (done) => {
-      Alert
-        .getById(alert._id, (error, found) => {
-          expect(error).to.not.exist;
-          expect(found).to.exist;
-          expect(found._id).to.eql(alert._id);
-          done(error, found);
-        });
+      Alert.getById(alert._id, (error, found) => {
+        expect(error).to.not.exist;
+        expect(found).to.exist;
+        expect(found._id).to.eql(alert._id);
+        done(error, found);
+      });
     });
 
     it('should be able to get with options', (done) => {
-
       const options = {
         _id: alert._id,
         select: 'event'
@@ -58,7 +56,6 @@ describe('Alert', () => {
             expect(fields).to.not.include(field);
           });
 
-
           done(error, found);
         });
 
@@ -66,16 +63,14 @@ describe('Alert', () => {
 
     it('should throw if not exists', (done) => {
       const alert = Alert.fake();
-      Alert
-        .getById(alert._id, (error, found) => {
-          expect(error).to.exist;
-          expect(error.status).to.exist;
-          expect(error.message).to.be.equal('Not Found');
-          expect(found).to.not.exist;
-          done();
-        });
+      Alert.getById(alert._id, (error, found) => {
+        expect(error).to.exist;
+        expect(error.status).to.exist;
+        expect(error.message).to.be.equal('Not Found');
+        expect(found).to.not.exist;
+        done();
+      });
     });
-
   });
 
   after((done) => {

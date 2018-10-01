@@ -1,17 +1,18 @@
 'use strict';
 
+
 /* dependencies */
 const path = require('path');
 const { expect } = require('chai');
 const { Alert } = require(path.join(__dirname, '..', '..'));
 
-describe('Alert', function () {
+describe('Alert', () => {
 
   before((done) => {
     Alert.deleteMany(done);
   });
 
-  describe('static delete', function () {
+  describe('static delete', () => {
 
     let alert;
 
@@ -24,29 +25,27 @@ describe('Alert', function () {
     });
 
     it('should be able to delete', (done) => {
-      Alert
-        .del(alert._id, (error, deleted) => {
-          expect(error).to.not.exist;
-          expect(deleted).to.exist;
-          expect(deleted._id).to.eql(alert._id);
-          done(error, deleted);
-        });
+      Alert.del(alert._id, (error, deleted) => {
+        expect(error).to.not.exist;
+        expect(deleted).to.exist;
+        expect(deleted._id).to.eql(alert._id);
+        done(error, deleted);
+      });
     });
 
     it('should throw if not exists', (done) => {
-      Alert
-        .del(alert._id, (error, deleted) => {
-          expect(error).to.exist;
-          expect(error.status).to.exist;
-          expect(error.message).to.be.equal('Not Found');
-          expect(deleted).to.not.exist;
-          done();
-        });
+      Alert.del(alert._id, (error, deleted) => {
+        expect(error).to.exist;
+        expect(error.status).to.exist;
+        expect(error.message).to.be.equal('Not Found');
+        expect(deleted).to.not.exist;
+        done();
+      });
     });
 
   });
 
-  describe('instance delete', function () {
+  describe('instance delete', () => {
 
     let alert;
 

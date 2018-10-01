@@ -1,7 +1,7 @@
 {
   "name": "@codetanzania/emis-alert",
   "version": "1.0.0",
-  "description": "A representation of an entity which provides(or receives) notifications to(or from) source(s).",
+  "description": "A representation of an envelope(or payload) which carries disaster notifications(or warning) from source(s) to audience(s).",
   "main": "index.js",
   "scripts": {
     "test": "grunt test",
@@ -19,20 +19,17 @@
     "alert",
     "incident",
     "hazard",
+    "risk",
     "emergency",
     "warning",
-    "disaster"
+    "disaster",
+    "notification"
   ],
   "contributors": [
     {
       "name": "lykmapipo",
       "email": "lallyelias87@gmail.com",
       "url": "https://github.com/lykmapipo"
-    },
-    {
-      "name": "benMaruchu",
-      "email": "benmaruchu@gmail.com",
-      "url": "https://github.com/BenMaruchu"
     }
   ],
   "license": "MIT",
@@ -42,7 +39,25 @@
   },
   "homepage": "https://github.com/CodeTanzania/emis-alert",
   "sandbox": {
-    "url": "https://emis-alert.herokuapp.com/v1/alerts"
+    "url": "https://emis-alert.herokuapp.com",
+    "apiDoc": "https://codetanzania.github.io/emis-alert/",
+    "client_id": "",
+    "client_secret": "",
+    "urls": [
+      {
+        "resource": "IncidentType",
+        "link": "https://emis-alert.herokuapp.com/v1/alert",
+        "scopes": [
+          "alert:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
+      }
+    ]
   },
   "devDependencies": {
     "@benmaruchu/faker": "^4.2.1",
@@ -54,23 +69,23 @@
     "grunt-mocha-test": "^0.13.3",
     "jshint-stylish": "^2.2.1",
     "mocha": "^5.2.0",
-    "mongoose": "^5.2.17",
+    "mongoose": "^5.3.0",
     "sinon": "^6.3.4",
     "sinon-chai": "^3.2.0",
     "sinon-mongoose": "^2.2.1",
     "supertest": "^3.3.0"
   },
   "dependencies": {
-    "@codetanzania/majifix-common": "^0.9.2",
+    "@codetanzania/majifix-common": "^0.10.0",
     "@lykmapipo/express-common": "^0.9.1",
     "async": "^2.6.1",
     "convert-units": "^2.3.4",
     "express": "^4.16.3",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
-    "mongoose-geojson-schemas": "^0.7.1",
+    "mongoose-geojson-schemas": "^0.8.0",
     "mongoose-locale-schema": "^0.2.0",
-    "mongoose-rest-actions": "^0.17.1",
+    "mongoose-rest-actions": "^0.18.0",
     "randomcolor": "^0.5.3"
   },
   "engines": {

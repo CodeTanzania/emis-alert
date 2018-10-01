@@ -1,6 +1,6 @@
 {
   "name": "emis-alert",
-  "description": "A representation of an entity which provides(or receives) notifications to(or from) source(s).",
+  "description": "A representation of an envelope(or payload) which carries disaster notifications(or warning) from source(s) to audience(s).",
   "repository": "https://github.com/CodeTanzania/emis-alert.git",
   "keywords": [
     "codetanzania",
@@ -9,8 +9,11 @@
     "alert",
     "incident",
     "hazard",
+    "risk",
     "emergency",
-    "warning"
+    "warning",
+    "disaster",
+    "notification"
   ],
   "addons": [
     "mongolab"

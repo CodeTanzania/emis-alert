@@ -22,9 +22,7 @@ describe('Incident Type', () => {
     });
 
     it('should handle HTTP POST on /alerts', (done) => {
-
       alert = Alert.fake();
-
       request(app)
         .post(`/v${apiVersion}/alerts`)
         .set('Accept', 'application/json')
@@ -41,13 +39,10 @@ describe('Incident Type', () => {
           expect(created.event).to.exist;
 
           done(error, response);
-
         });
-
     });
 
     it('should handle HTTP GET on /alerts', (done) => {
-
       request(app)
         .get(`/v${apiVersion}/alerts`)
         .set('Accept', 'application/json')
@@ -67,13 +62,10 @@ describe('Incident Type', () => {
           expect(result.pages).to.exist;
           expect(result.lastModified).to.exist;
           done(error, response);
-
         });
-
     });
 
     it('should handle HTTP GET on /alerts/id:', (done) => {
-
       request(app)
         .get(`/v${apiVersion}/alerts/${alert._id}`)
         .set('Accept', 'application/json')
@@ -85,18 +77,15 @@ describe('Incident Type', () => {
           const found = response.body;
           expect(found._id).to.exist;
           expect(found._id).to.be.equal(alert._id.toString());
-          expect(found.event).to.be.equal(alert.event);
+          expect(found.event.name).to.be.equal(alert.event.name);
 
           done(error, response);
 
         });
-
     });
 
     it('should handle HTTP PATCH on /alerts/id:', (done) => {
-
       const patch = alert.fakeOnly('name');
-
       request(app)
         .patch(`/v${apiVersion}/alerts/${alert._id}`)
         .set('Accept', 'application/json')
@@ -108,21 +97,15 @@ describe('Incident Type', () => {
           expect(response).to.exist;
 
           const patched = response.body;
-
           expect(patched._id).to.exist;
           expect(patched._id).to.be.equal(alert._id.toString());
-          expect(patched.event).to.be.equal(alert.event);
-
+          expect(patched.event.name).to.be.equal(alert.event.name);
           done(error, response);
-
         });
-
     });
 
     it('should handle HTTP PUT on /alerts/id:', (done) => {
-
       const put = alert.fakeOnly('name');
-
       request(app)
         .put(`/v${apiVersion}/alerts/${alert._id}`)
         .set('Accept', 'application/json')
@@ -134,19 +117,14 @@ describe('Incident Type', () => {
           expect(response).to.exist;
 
           const updated = response.body;
-
           expect(updated._id).to.exist;
           expect(updated._id).to.be.equal(alert._id.toString());
-          expect(updated.event).to.be.equal(alert.event);
-
+          expect(updated.event.name).to.be.equal(alert.event.name);
           done(error, response);
-
         });
-
     });
 
     it('should handle HTTP DELETE on /alerts/:id', (done) => {
-
       request(app)
         .delete(`/v${apiVersion}/alerts/${alert._id}`)
         .set('Accept', 'application/json')
@@ -156,15 +134,11 @@ describe('Incident Type', () => {
           expect(response).to.exist;
 
           const deleted = response.body;
-
           expect(deleted._id).to.exist;
           expect(deleted._id).to.be.equal(alert._id.toString());
-          expect(deleted.event).to.be.equal(alert.event);
-
+          expect(deleted.event.name).to.be.equal(alert.event.name);
           done(error, response);
-
         });
-
     });
 
     after((done) => {

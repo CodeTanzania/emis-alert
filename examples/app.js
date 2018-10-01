@@ -2,8 +2,7 @@
 
 /* ensure mongo uri */
 process.env.MONGODB_URI =
-  (process.env.MONGODB_URI || 'mongodb://localhost/emis-incident-type');
-
+  (process.env.MONGODB_URI || 'mongodb://localhost/emis-alert');
 
 /* dependencies */
 const path = require('path');
@@ -17,7 +16,7 @@ const {
   info,
   app
 } = require(path.join(__dirname, '..'));
-let samples = Alert.fake(20);
+let samples = Alert.fake(32);
 
 
 /* connect to mongoose */

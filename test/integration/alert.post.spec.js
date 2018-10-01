@@ -5,13 +5,13 @@ const path = require('path');
 const { expect } = require('chai');
 const { Alert } = require(path.join(__dirname, '..', '..'));
 
-describe('Alert', function () {
+describe('Alert', () => {
 
   before((done) => {
     Alert.deleteMany(done);
   });
 
-  describe('static post', function () {
+  describe('static post', () => {
 
     let alert;
 
@@ -28,7 +28,7 @@ describe('Alert', function () {
 
   });
 
-  describe('instance post', function () {
+  describe('instance post', () => {
 
     let alert;
 
