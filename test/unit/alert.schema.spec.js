@@ -38,11 +38,11 @@ describe('Alert Schema', () => {
     expect(area.schema).to.be.instanceof(Schema);
   });
 
-  it('should have resource field', () => {
-    const resource = Alert.path('resource');
+  it('should have resources field', () => {
+    const resources = Alert.path('resources');
 
-    expect(resource).to.exist;
-    expect(resource.schema).to.be.instanceof(Schema);
+    expect(resources).to.exist;
+    expect(resources.schema).to.be.instanceof(Schema);
   });
 
   it('should have reportedAt field', () => {

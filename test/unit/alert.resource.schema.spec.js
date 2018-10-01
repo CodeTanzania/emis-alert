@@ -9,7 +9,7 @@ const { Alert } = require(path.join(__dirname, '..', '..'));
 
 describe('Resource Schema', () => {
 
-  const Resource = Alert.path('resource').schema;
+  const Resource = Alert.path('resources').schema;
 
   it('should have description field', () => {
     const description = Resource.path('description');
