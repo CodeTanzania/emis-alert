@@ -24,7 +24,7 @@ describe('Event Schema', () => {
     expect(code).to.be.instanceof(Schema.Types.String);
     expect(code.options.alias).to.be.equal('eventCode');
     expect(code.options.trim).to.be.true;
-    expect(code.options.required).to.be.true;
+    // expect(code.options.required).to.be.true;
     expect(code.options.index).to.be.true;
     expect(code.options.searchable).to.be.true;
     expect(code.options.fake).to.exist;

@@ -51,7 +51,7 @@ describe('Alert Schema', () => {
     expect(reportedAt).to.exist;
     expect(reportedAt).to.be.instanceof(Schema.Types.Date);
     expect(reportedAt.options.alias).to.be.equal('sent');
-    expect(reportedAt.options.required).to.be.true;
+    // expect(reportedAt.options.required).to.be.true;
     expect(reportedAt.options.index).to.be.true;
     expect(reportedAt.options.fake).to.exist;
   });
@@ -61,7 +61,7 @@ describe('Alert Schema', () => {
 
     expect(expectedAt).to.exist;
     expect(expectedAt).to.be.instanceof(Schema.Types.Date);
-    expect(expectedAt.options.required).to.be.true;
+    // expect(expectedAt.options.required).to.be.true;
     expect(expectedAt.options.index).to.be.true;
     expect(expectedAt.options.fake).to.exist;
   });
@@ -72,7 +72,7 @@ describe('Alert Schema', () => {
     expect(expiredAt).to.exist;
     expect(expiredAt).to.be.instanceof(Schema.Types.Date);
     expect(expiredAt.options.alias).to.be.equal('expires');
-    expect(expiredAt.options.required).to.be.true;
+    // expect(expiredAt.options.required).to.be.true;
     expect(expiredAt.options.index).to.be.true;
     expect(expiredAt.options.fake).to.exist;
   });
@@ -102,7 +102,7 @@ describe('Alert Schema', () => {
     expect(direction).to.exist;
     expect(direction).to.be.instanceof(Schema.Types.String);
     expect(direction.options.trim).to.be.true;
-    expect(direction.options.required).to.be.true;
+    // expect(direction.options.required).to.be.true;
     expect(direction.options.enum).to.exist;
     expect(direction.options.enum).to.be.eql(DIRECTIONS);
     expect(direction.options.index).to.be.true;

@@ -75,7 +75,7 @@ describe('Message Schema', () => {
     expect(addresses).to.be.instanceof(Schema.Types.Array);
     expect(addresses.options.trim).to.be.true;
     expect(addresses.options.lowercase).to.be.true;
-    expect(addresses.options.required).to.be.true;
+    // expect(addresses.options.required).to.be.true;
     expect(addresses.options.index).to.be.true;
     expect(addresses.options.searchable).to.be.true;
     expect(addresses.options.fake).to.exist;
@@ -87,7 +87,7 @@ describe('Message Schema', () => {
     expect(code).to.exist;
     expect(code).to.be.instanceof(Schema.Types.String);
     expect(code.options.trim).to.be.true;
-    expect(code.options.required).to.be.true;
+    // expect(code.options.required).to.be.true;
     expect(code.options.index).to.be.true;
     expect(code.options.searchable).to.be.true;
     expect(code.options.fake).to.exist;
@@ -99,7 +99,7 @@ describe('Message Schema', () => {
     expect(note).to.exist;
     expect(note).to.be.instanceof(Schema.Types.String);
     expect(note.options.trim).to.be.true;
-    expect(note.options.required).to.be.true;
+    // expect(note.options.required).to.be.true;
     expect(note.options.index).to.be.true;
     expect(note.options.searchable).to.be.true;
     expect(note.options.fake).to.exist;
@@ -122,7 +122,7 @@ describe('Message Schema', () => {
     expect(headline).to.exist;
     expect(headline).to.be.instanceof(Schema.Types.String);
     expect(headline.options.trim).to.be.true;
-    expect(headline.options.required).to.be.true;
+    // expect(headline.options.required).to.be.true;
     expect(headline.options.index).to.be.true;
     expect(headline.options.searchable).to.be.true;
     expect(headline.options.fake).to.exist;
