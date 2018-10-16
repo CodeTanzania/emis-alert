@@ -31,6 +31,16 @@ describe('Area Schema', () => {
     expect(coordinates).to.be.instanceof(Schema.Types.Array);
   });
 
+  it('should have centroid field', () => {
+    const centroid = Alert.path('area.centroid');
+    const type = Alert.path('area.centroid.type');
+    const coordinates = Alert.path('area.centroid.coordinates');
+
+    expect(centroid).to.exist;
+    expect(type).to.be.instanceof(Schema.Types.String);
+    expect(coordinates).to.be.instanceof(Schema.Types.Array);
+  });
+
   it('should have altitude field', () => {
     const altitude = Alert.path('area.altitude');
 
