@@ -10,7 +10,7 @@ A representation of an envelope(or payload) which carries disaster notifications
 
 ## Domain Model
 
-![EMIS Alert Domain Model](https://raw.githubusercontent.com/CodeTanzania/emis-alert/develop/specifications/capv0.1.0.png)
+![EMIS Alert Domain Model](https://raw.githubusercontent.com/CodeTanzania/emis-alert/develop/specifications/alert.model.png)
 
 ## Requirements
 
@@ -38,6 +38,7 @@ app.start((error) => { ... });
 - [CAP-v1.2-PR03](http://docs.oasis-open.org/emergency/cap/v1.2/pr03/CAP-v1.2-PR03.pdf)
 - [Google Public Alerts CAP v1.0](https://developers.google.com/public-alerts/reference/cap-google)
 - [Guidelines for Implementation CAP](https://library.wmo.int/pmb_ged/wmo_1109_en.pdf)
+- [Wikipedia: ISO 22324](https://en.wikipedia.org/wiki/ISO_22324)
 
 ## Testing
 
