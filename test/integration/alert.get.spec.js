@@ -78,7 +78,7 @@ describe('Alert', () => {
 
 
     it('should be able to search with options', (done) => {
-      const options = { filter: { q: alerts[0].event.name } };
+      const options = { filter: { q: alerts[0].event } };
       Alert.get(options, function (error, results) {
         expect(error).to.not.exist;
         expect(results).to.exist;
@@ -103,7 +103,7 @@ describe('Alert', () => {
 
 
     it('should parse filter options', (done) => {
-      const options = { filter: { 'event.name': alerts[0].event.name } };
+      const options = { filter: { event: alerts[0].event } };
       Alert.get(options, function (error, results) {
         expect(error).to.not.exist;
         expect(results).to.exist;

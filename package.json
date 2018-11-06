@@ -87,7 +87,7 @@
     "moment": "^2.22.2",
     "mongoose-geojson-schemas": "^0.8.1",
     "mongoose-locale-schema": "^0.2.1",
-    "mongoose-rest-actions": "^0.20.0",
+    "mongoose-rest-actions": "^0.20.1",
     "randomcolor": "^0.5.3",
     "uuid": "^3.3.2"
   },
