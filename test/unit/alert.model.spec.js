@@ -28,6 +28,17 @@ describe('Alert Instance', () => {
     });
   });
 
+  it('`preValidate` should set color', (done) => {
+    const alert = Alert.fake();
+    alert.color = undefined;
+    expect(alert.color).to.not.exist;
+
+    alert.preValidate((error) => {
+      expect(alert.color).to.exist;
+      done(error);
+    });
+  });
+
 });
 
 describe('Alert Statics', () => {
@@ -148,6 +159,35 @@ describe('Alert Statics', () => {
       'Possible', 'Unlikely',
       'Unknown'
     ]);
+  });
+
+  it('should expose severity colors', () => {
+    expect(Alert.DEFAULT_COLOR).to.exist;
+    expect(Alert.DEFAULT_COLOR).to.be.eql('#3366FF');
+
+    expect(Alert.COLOR_UNKNOWN).to.exist;
+    expect(Alert.COLOR_UNKNOWN).to.be.eql('#3366FF');
+
+    expect(Alert.COLOR_MINOR).to.exist;
+    expect(Alert.COLOR_MINOR).to.be.eql('#88E729');
+
+    expect(Alert.COLOR_MODERATE).to.exist;
+    expect(Alert.COLOR_MODERATE).to.be.eql('#FFFF00');
+
+    expect(Alert.COLOR_SEVERE).to.exist;
+    expect(Alert.COLOR_SEVERE).to.be.eql('#FE9901');
+
+    expect(Alert.COLOR_EXTREME).to.exist;
+    expect(Alert.COLOR_EXTREME).to.be.eql('#D72E29');
+
+    expect(Alert.COLORS).to.exist;
+    expect(Alert.COLORS).to.be.eql({
+      COLOR_UNKNOWN: '#3366FF',
+      COLOR_MINOR: '#88E729',
+      COLOR_MODERATE: '#FFFF00',
+      COLOR_SEVERE: '#FE9901',
+      COLOR_EXTREME: '#D72E29'
+    });
   });
 
   it('should expose autopulate options', () => {
