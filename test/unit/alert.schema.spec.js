@@ -29,21 +29,21 @@ const {
 
 describe('Alert Schema', () => {
 
-  it('should have sender field', () => {
-    const sender = Alert.path('sender');
+  it('should have source field', () => {
+    const source = Alert.path('source');
 
-    expect(sender).to.exist;
-    expect(sender).to.be.an.instanceof(Schema.Types.String);
-    expect(sender.options).to.exist;
-    expect(sender.options).to.be.an('object');
-    expect(sender.options.type).to.exist;
-    expect(sender.options.trim).to.be.true;
-    expect(sender.options.required).to.be.true;
-    expect(sender.options.startcase).to.be.true;
-    expect(sender.options.index).to.be.true;
-    expect(sender.options.searchable).to.be.true;
-    expect(sender.options.fake).to.exist;
-    expect(sender.options.fake).to.be.an('object');
+    expect(source).to.exist;
+    expect(source).to.be.an.instanceof(Schema.Types.String);
+    expect(source.options).to.exist;
+    expect(source.options).to.be.an('object');
+    expect(source.options.type).to.exist;
+    expect(source.options.trim).to.be.true;
+    expect(source.options.required).to.be.true;
+    expect(source.options.startcase).to.be.true;
+    expect(source.options.index).to.be.true;
+    expect(source.options.searchable).to.be.true;
+    expect(source.options.fake).to.exist;
+    expect(source.options.fake).to.be.an('object');
   });
 
   it('should have number field', () => {
