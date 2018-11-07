@@ -1,0 +1,37 @@
+[
+{
+  "source": "Schneider Green And Schamberger",
+  "number": "D9BCE1E7-F0BF-4A3F-A603-2E9EC773988C",
+  "status": "Test",
+  "type": "Ask",
+  "scope": "Private",
+  "category": "Security",
+  "event": "Fuga corrupti nemo tempora ducimus ab voluptas quas.",
+  "response": "Execute",
+  "urgency": "Unknown",
+  "severity": "Moderate",
+  "certainty": "Unknown",
+  "headline": "Officia et necessitatibus.",
+  "description": "Dolorum et perspiciatis vitae voluptas et repellat. Qui fuga doloribus quia laboriosam aut dolor. Eos eos earum debitis.",
+  "instruction": "Consequuntur accusamus et. Pariatur sed repudiandae excepturi. Enim inventore amet quasi molestiae aliquam necessitatibus ex.",
+  "url": "https://chanelle.com",
+  "area": "Borders",
+  "geometry":
+  {
+    "type": "Point",
+    "coordinates": [31.011201762602077, -5.6768640531217684]
+  },
+  "centroid":
+  {
+    "type": "Point",
+    "coordinates": [30.620580349330698, -5.2326008003514355]
+  },
+  "reportedAt": "2018-03-12T14:23:22.495Z",
+  "expectedAt": "2018-10-27T05:42:37.109Z",
+  "expiredAt": "2018-08-22T02:23:08.436Z",
+  "direction": "Inbound",
+  "color": "#FFFF00",
+  "_id": "5be2e194ac01ea2a16e2e6c9",
+  "updatedAt": "2018-11-07T12:59:01.392Z",
+  "createdAt": "2018-11-07T12:59:01.392Z"
+}]
