@@ -10,7 +10,7 @@ process.env.MONGODB_URI =
 const path = require('path');
 const async = require('async');
 const mongoose = require('mongoose');
-const { Party } = require('@codetanzania/emis-party');
+const { Party } = require('@codetanzania/emis-stakeholder');
 const {
   Alert,
   apiVersion,
@@ -33,8 +33,7 @@ async.waterfall([
     Alert.seed(next);
   }
 
-], ( /*error, results*/ ) => {
-
+], (error, results) => {
   /* expose module info */
   app.get('/', (request, response) => {
     response.status(200);
