@@ -3,6 +3,7 @@
 
 /* ensure test env */
 process.env.NODE_ENV = 'test';
+process.env.DEBUG = true;
 process.env.MONGODB_URI =
   (process.env.MONGODB_URI || 'mongodb://localhost/emis-alert');
 

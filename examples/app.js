@@ -8,7 +8,9 @@ process.env.MONGODB_URI =
 
 /* dependencies */
 const path = require('path');
+const async = require('async');
 const mongoose = require('mongoose');
+const { Party } = require('@codetanzania/emis-party');
 const {
   Alert,
   apiVersion,
@@ -20,8 +22,19 @@ const {
 /* connect to mongoose */
 mongoose.connect(process.env.MONGODB_URI);
 
+//boot
+async.waterfall([
 
-Alert.seed(( /*error, results*/ ) => {
+  function seedParties(next) {
+    Party.seed(next);
+  },
+
+  function seedAlerts(parties, next) {
+    Alert.seed(next);
+  }
+
+], ( /*error, results*/ ) => {
+
   /* expose module info */
   app.get('/', (request, response) => {
     response.status(200);
