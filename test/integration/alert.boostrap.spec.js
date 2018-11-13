@@ -1,16 +1,19 @@
 'use strict';
 
 
+/* ensure test env */
 process.env.NODE_ENV = 'test';
+process.env.DEBUG = true;
+process.env.MONGODB_URI =
+  (process.env.MONGODB_URI || 'mongodb://localhost/emis-alert');
 
 
 /* dependencies */
 const mongoose = require('mongoose');
-const MONGODB_URI = 'mongodb://localhost/emis-alert';
 
 
 /* clean and restore database */
-const wipe = (done) => {
+const wipe = done => {
   if (mongoose.connection && mongoose.connection.dropDatabase) {
     mongoose.connection.dropDatabase(done);
   } else {
@@ -21,8 +24,7 @@ const wipe = (done) => {
 
 /* setup database */
 before((done) => {
-  const options = { useNewUrlParser: true };
-  mongoose.connect(MONGODB_URI, options, done);
+  mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true }, done);
 });
 
 

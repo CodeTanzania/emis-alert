@@ -1,12 +1,13 @@
 {
   "name": "@codetanzania/emis-alert",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A representation of an envelope(or payload) which carries disaster notifications(or warning) from source(s) to audience(s).",
   "main": "index.js",
   "scripts": {
     "test": "grunt test",
     "integration": "grunt integration",
-    "dev": "BASE_PATH=./examples node ./examples/app.js"
+    "dev": "BASE_PATH=./examples node ./examples/app.js",
+    "worker": "BASE_PATH=./examples node ./examples/worker.js"
   },
   "repository": {
     "type": "git",
@@ -14,16 +15,27 @@
   },
   "keywords": [
     "codetanzania",
+    "lykmapipo",
     "emis",
     "emis-module",
-    "alert",
-    "incident",
+    "disaster",
+    "emergency",
     "hazard",
     "risk",
-    "emergency",
+    "loss",
+    "exposure",
+    "resilience",
     "warning",
-    "disaster",
-    "notification"
+    "assessment",
+    "drm",
+    "mitigation",
+    "preparedness",
+    "response",
+    "recovery",
+    "alert",
+    "incident",
+    "notification",
+    "alarm"
   ],
   "contributors": [
     {
@@ -45,8 +57,8 @@
     "client_secret": "",
     "urls": [
       {
-        "resource": "IncidentType",
-        "link": "https://emis-alert.herokuapp.com/v1/alert",
+        "resource": "Alert",
+        "link": "https://emis-alert.herokuapp.com/v1/alerts",
         "scopes": [
           "alert:*"
         ],
@@ -61,32 +73,64 @@
   },
   "devDependencies": {
     "@benmaruchu/faker": "^4.2.1",
+    "@codetanzania/emis-incident-type": "^1.2.0",
+    "@codetanzania/emis-role": "^1.0.3",
+    "@codetanzania/emis-stakeholder": "^1.1.0",
+    "@codetanzania/majifix-common": "^0.11.1",
+    "@lykmapipo/env": "^0.3.2",
+    "@lykmapipo/express-common": "^0.9.3",
+    "@lykmapipo/permission": "^0.4.0",
+    "@lykmapipo/postman": "^0.5.1",
+    "async": "^2.6.1",
     "chai": "^4.2.0",
+    "express": "^4.16.4",
     "grunt": "^1.0.3",
     "grunt-apidoc": "^0.11.0",
     "grunt-contrib-jshint": "^2.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-mocha-test": "^0.13.3",
     "jshint-stylish": "^2.2.1",
+    "kue": "^0.11.6",
+    "lodash": "^4.17.11",
     "mocha": "^5.2.0",
-    "mongoose": "^5.3.0",
-    "sinon": "^6.3.4",
+    "moment": "^2.22.2",
+    "moment-timezone": "^0.5.23",
+    "mongoose": "^5.3.11",
+    "mongoose-geojson-schemas": "^0.8.2",
+    "mongoose-kue": "^0.7.1",
+    "mongoose-rest-actions": "^0.20.2",
+    "mongoose-schema-jsonschema": "^1.1.15",
+    "redis": "^2.8.0",
+    "sinon": "^7.1.1",
     "sinon-chai": "^3.2.0",
     "sinon-mongoose": "^2.2.1",
     "supertest": "^3.3.0"
   },
-  "dependencies": {
-    "@codetanzania/majifix-common": "^0.10.0",
-    "@lykmapipo/express-common": "^0.9.1",
+  "peerDependencies": {
+    "@codetanzania/emis-incident-type": "^1.2.0",
+    "@codetanzania/emis-role": "^1.0.3",
+    "@codetanzania/emis-stakeholder": "^1.1.0",
+    "@codetanzania/majifix-common": "^0.11.1",
+    "@lykmapipo/env": "^0.3.2",
+    "@lykmapipo/express-common": "^0.9.3",
+    "@lykmapipo/permission": "^0.4.0",
+    "@lykmapipo/postman": "^0.5.1",
     "async": "^2.6.1",
-    "convert-units": "^2.3.4",
-    "express": "^4.16.3",
+    "express": "^4.16.4",
+    "kue": "^0.11.6",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
-    "mongoose-geojson-schemas": "^0.8.0",
-    "mongoose-locale-schema": "^0.2.0",
-    "mongoose-rest-actions": "^0.18.0",
-    "randomcolor": "^0.5.3"
+    "moment-timezone": "^0.5.23",
+    "mongoose": "^5.3.11",
+    "mongoose-geojson-schemas": "^0.8.2",
+    "mongoose-kue": "^0.7.1",
+    "mongoose-rest-actions": "^0.20.2",
+    "mongoose-schema-jsonschema": "^1.1.15",
+    "redis": "^2.8.0"
+  },
+  "dependencies": {
+    "randomcolor": "^0.5.3",
+    "uuid": "^3.3.2"
   },
   "engines": {
     "node": ">=8.11.1",

@@ -62,73 +62,150 @@
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
             "optional": false,
             "field": "source",
-            "description": "<p>A party(or source or authority etc) issuing alert(or warning or notification).</p>"
+            "description": "<p>Human readable name of party(agency, authority etc) issuing(or generating) an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
+            "optional": true,
+            "field": "number",
+            "description": "<p>Human readable, system specific identifier of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "status",
+            "description": "<p>Human readable code denoting the appropriate handling of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "type",
+            "description": "<p>Human readable code denoting the nature of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "scope",
+            "description": "<p>Human readable code denoting the intended distribution of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "category",
+            "description": "<p>Human readable code denoting the category of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
             "optional": false,
             "field": "event",
-            "description": "<p>Denoting type of the subject of the alert.</p>"
+            "description": "<p>Human readable text denoting the subject of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "message",
-            "description": "<p>Denoting message of the alert.</p>"
+            "type": "String",
+            "optional": true,
+            "field": "response",
+            "description": "<p>Human readable code denoting the type of action recommended for the target audience as per instruction of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
+            "optional": true,
+            "field": "urgency",
+            "description": "<p>Human readable code denoting the urgency of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "severity",
+            "description": "<p>Human readable code denoting the severity of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "certainty",
+            "description": "<p>Human readable code denoting the certainty of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "headline",
+            "description": "<p>A brief human-readable headline(title) of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>An extended human readable description of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "instruction",
+            "description": "<p>Human readable text describing the recommended action to be taken by recipients of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "url",
+            "description": "<p>A full, absolute URI for an HTML page or other text resource with additional or reference information regarding an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
             "optional": false,
             "field": "area",
-            "description": "<p>Delineation of area(s) that may be affected by the alert.</p>"
+            "description": "<p>Human readble text describing the affected area(s) of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "Geometry",
             "optional": true,
-            "field": "resource",
-            "description": "<p>Additional file with supplemental information related to alert message e.g. an image or audio file.</p>"
+            "field": "geometry",
+            "description": "<p>The paired values of geo-points defining a geometry(i.e polygon, line etc) that delineates the affected area(s) of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Point",
+            "optional": true,
+            "field": "centroid",
+            "description": "<p>The centre of affected area of an alert.</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
-            "optional": false,
+            "optional": true,
             "field": "reportedAt",
-            "description": "<p>Date and time the alert was issued(or generated) by the alert source(or generator) e.g 2018-07-28 23:53:19 etc.</p>"
+            "description": "<p>Date and time when an alert was issued(or generated) by sender(source, generator).</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
             "optional": true,
             "field": "expectedAt",
-            "description": "<p>The expected time of the beginning of the subject event of the alert message e.g 2018-02-01T16:49:00</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Date",
-            "optional": false,
-            "field": "expiredAt",
-            "description": "<p>The expiry time of the information of the alert message e.g 2018-03-03T11:19:00</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Date",
-            "optional": false,
-            "field": "occuredAt",
-            "description": "<p>The effective time of the information of the alert message e.g e.g 2018-02-01T15:19:00</p>"
+            "description": "<p>The expected time of the beginning of an alert.</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
             "optional": true,
-            "field": "endedAt",
-            "description": "<p>The effective date and time when alert occurance ended e.g 2018-02-01T15:19:00</p>"
+            "field": "expiredAt",
+            "description": "<p>The expiry time of the information of an alert.</p>"
           },
           {
             "group": "Success 200",
@@ -136,7 +213,14 @@
             "optional": true,
             "field": "direction",
             "defaultValue": "Inbound",
-            "description": "<p>Human readable direction(received or given) of the alert i.e Inbound or Outbound.</p>"
+            "description": "<p>Human readable direction(received or given) of the alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "color",
+            "description": "<p>A color code(in hexadecimal format) used to differentiate an alert visually.</p>"
           },
           {
             "group": "Success 200",
@@ -157,7 +241,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n   _id: \"5bb25b91265be953c92f1521\",\n   source:\n   {\n       name: \"Nicolas - Gulgowski\",\n       phone: \"509.465.8501\",\n       email: \"phoebe_borer26@yahoo.com\",\n       website: \"https://waylon.com\"\n   },\n   event:\n   {\n       code: \"de2ed472-b3c5-44da-902d-51e96fc6e7ad\",\n       name: \"Sit sit nisi earum maiores commodi voluptatum illum.\",\n       category: \"Safety\",\n       description: \"Et et doloremque iusto nihil eos nam in consequatur.\",\n       urgency: \"Past\",\n       severity: \"Moderate\",\n       certainty: \"Unlikely\",\n       response: \"Shelter\"\n   },\n   message:\n   {\n       status: \"System\",\n       type: \"Ask\",\n       scope: \"Restricted\",\n       restriction: \"Necessitatibus est quod.\",\n       addresses: [\"mervin16@yahoo.com\"],\n       code: \"azure\",\n       note: \"Pariatur repellat dignissimos quas.\",\n       headline: \"Ipsa animi impedit officia.\",\n       instruction: \"Perspiciatis repudiandae doloribus.\",\n       website: \"http://ashly.net\"\n   },\n   area:\n   {\n       description: \"Borders\",\n       geometry:\n       {\n           type: \"Polygon\",\n           coordinates: [\n               [\n                   [44.184551651362, -1.6081961004244478],\n                   [41.21125601611241, -8.010221783743527],\n                   [37.854639889998076, -7.8464285284416935],\n                   [36.51791603953068, -11.054968936423933],\n                   [33.01453708697774, -15.497233831943916],\n                   [32.784868513491695, -13.29610438543305],\n                   [35.67894312439057, -7.63634997688592],\n                   [30.492728316323237, -8.692066624888076],\n                   [31.689532286539443, -2.864154032119321],\n                   [37.13965577600533, -5.922104559306792],\n                   [44.184551651362, -1.6081961004244478]\n               ]\n           ]\n       },\n       altitude: 3263313890770944,\n       ceiling: 2341686824927232\n   },\n   resources: [\n   {\n       description: \"Exercitationem nobis\",\n       mime: \"audio/evrc1\",\n       uri: \"https://s3.amazonaws.com/uifaces/faces/twitter/falvarad/128.jpg\"\n   }],\n   reportedAt: \"2018-09-05T06:51:49.629Z\",\n   expectedAt: \"2018-09-06T23:38:11.062Z\",\n   expiredAt: \"2018-09-29T09:45:30.790Z\",\n   occuredAt: \"2018-08-30T20:52:56.029Z\",\n   endedAt: \"2018-09-08T07:18:46.205Z\",\n   direction: \"Inbound\",\n   updatedAt: \"2018-10-01T17:38:26.066Z\",\n   createdAt: \"2018-10-01T17:38:26.066Z\"\n}",
+          "content": "{\n   \"_id\": \"5be1df42842d9d5bf8556da8\",\n   \"sender\": \"Vandervort\",\n   \"number\": \"55DAEB99-14C5-4009-9A84-EBF01D96D89C\",\n   \"status\": \"Exercise\",\n   \"type\": \"Error\",\n   \"scope\": \"Public\",\n   \"category\": \"Fire\",\n   \"event\": \"Omnis et delectus id omnis quibusdam.\",\n   \"response\": \"AllClear\",\n   \"urgency\": \"Past\",\n   \"severity\": \"Severe\",\n   \"certainty\": \"Observed\",\n   \"headline\": \"Autem sint hic dolorem quasi aliquam amet beatae.\",\n   \"description\": \"Ut voluptate quo voluptatem ea asperiores.\",\n   \"instruction\": \"Et doloremque odit alias optio nihil temporibus soluta.\",\n   \"url\": \"https://loyce.org\",\n   \"area\": \"Avon\",\n   \"geometry\":\n   {\n       \"type\": \"Polygon\",\n       \"coordinates\": [\n           [\n               [34.0962460876592, -6.027472074582597],\n               [36.14211410064278, -7.73276252407186],\n               [34.26678374339001, -11.052568169309106],\n               [37.9984237359413, -19.518211005210446],\n               [34.81395505104936, -16.756448591687228],\n               [33.1875973147786, -19.028057614810873],\n               [33.19738425670787, -11.327556097253908],\n               [29.532252395715762, -9.526871069904153],\n               [27.14333524479317, -5.2808693952369214],\n               [33.662964128882464, -10.049782036387153],\n               [34.0962460876592, -6.027472074582597]\n           ]\n       ]\n   },\n   \"centroid\":\n   {\n       \"type\": \"Point\",\n       \"coordinates\": [39.14056019762375, -3.7587456547395846]\n   },\n   \"reportedAt\": \"2018-09-30T05:05:28.689Z\",\n   \"expectedAt\": \"2018-10-29T11:29:16.562Z\",\n   \"expiredAt\": \"2018-10-25T05:35:26.462Z\",\n   \"direction\": \"Outbound\",\n   \"color\": \"#FE9901\",\n   \"updatedAt\": \"2018-11-06T18:36:50.998Z\",\n   \"createdAt\": \"2018-11-06T18:36:50.998Z\"\n}",
           "type": "json"
         }
       ]
@@ -256,73 +340,150 @@
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
             "optional": false,
             "field": "source",
-            "description": "<p>A party(or source or authority etc) issuing alert(or warning or notification).</p>"
+            "description": "<p>Human readable name of party(agency, authority etc) issuing(or generating) an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
+            "optional": true,
+            "field": "number",
+            "description": "<p>Human readable, system specific identifier of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "status",
+            "description": "<p>Human readable code denoting the appropriate handling of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "type",
+            "description": "<p>Human readable code denoting the nature of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "scope",
+            "description": "<p>Human readable code denoting the intended distribution of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "category",
+            "description": "<p>Human readable code denoting the category of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
             "optional": false,
             "field": "event",
-            "description": "<p>Denoting type of the subject of the alert.</p>"
+            "description": "<p>Human readable text denoting the subject of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "message",
-            "description": "<p>Denoting message of the alert.</p>"
+            "type": "String",
+            "optional": true,
+            "field": "response",
+            "description": "<p>Human readable code denoting the type of action recommended for the target audience as per instruction of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
+            "optional": true,
+            "field": "urgency",
+            "description": "<p>Human readable code denoting the urgency of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "severity",
+            "description": "<p>Human readable code denoting the severity of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "certainty",
+            "description": "<p>Human readable code denoting the certainty of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "headline",
+            "description": "<p>A brief human-readable headline(title) of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>An extended human readable description of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "instruction",
+            "description": "<p>Human readable text describing the recommended action to be taken by recipients of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "url",
+            "description": "<p>A full, absolute URI for an HTML page or other text resource with additional or reference information regarding an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
             "optional": false,
             "field": "area",
-            "description": "<p>Delineation of area(s) that may be affected by the alert.</p>"
+            "description": "<p>Human readble text describing the affected area(s) of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "Geometry",
             "optional": true,
-            "field": "resource",
-            "description": "<p>Additional file with supplemental information related to alert message e.g. an image or audio file.</p>"
+            "field": "geometry",
+            "description": "<p>The paired values of geo-points defining a geometry(i.e polygon, line etc) that delineates the affected area(s) of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Point",
+            "optional": true,
+            "field": "centroid",
+            "description": "<p>The centre of affected area of an alert.</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
-            "optional": false,
+            "optional": true,
             "field": "reportedAt",
-            "description": "<p>Date and time the alert was issued(or generated) by the alert source(or generator) e.g 2018-07-28 23:53:19 etc.</p>"
+            "description": "<p>Date and time when an alert was issued(or generated) by sender(source, generator).</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
             "optional": true,
             "field": "expectedAt",
-            "description": "<p>The expected time of the beginning of the subject event of the alert message e.g 2018-02-01T16:49:00</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Date",
-            "optional": false,
-            "field": "expiredAt",
-            "description": "<p>The expiry time of the information of the alert message e.g 2018-03-03T11:19:00</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Date",
-            "optional": false,
-            "field": "occuredAt",
-            "description": "<p>The effective time of the information of the alert message e.g e.g 2018-02-01T15:19:00</p>"
+            "description": "<p>The expected time of the beginning of an alert.</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
             "optional": true,
-            "field": "endedAt",
-            "description": "<p>The effective date and time when alert occurance ended e.g 2018-02-01T15:19:00</p>"
+            "field": "expiredAt",
+            "description": "<p>The expiry time of the information of an alert.</p>"
           },
           {
             "group": "Success 200",
@@ -330,7 +491,14 @@
             "optional": true,
             "field": "direction",
             "defaultValue": "Inbound",
-            "description": "<p>Human readable direction(received or given) of the alert i.e Inbound or Outbound.</p>"
+            "description": "<p>Human readable direction(received or given) of the alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "color",
+            "description": "<p>A color code(in hexadecimal format) used to differentiate an alert visually.</p>"
           },
           {
             "group": "Success 200",
@@ -351,7 +519,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n   _id: \"5bb25b91265be953c92f1521\",\n   source:\n   {\n       name: \"Nicolas - Gulgowski\",\n       phone: \"509.465.8501\",\n       email: \"phoebe_borer26@yahoo.com\",\n       website: \"https://waylon.com\"\n   },\n   event:\n   {\n       code: \"de2ed472-b3c5-44da-902d-51e96fc6e7ad\",\n       name: \"Sit sit nisi earum maiores commodi voluptatum illum.\",\n       category: \"Safety\",\n       description: \"Et et doloremque iusto nihil eos nam in consequatur.\",\n       urgency: \"Past\",\n       severity: \"Moderate\",\n       certainty: \"Unlikely\",\n       response: \"Shelter\"\n   },\n   message:\n   {\n       status: \"System\",\n       type: \"Ask\",\n       scope: \"Restricted\",\n       restriction: \"Necessitatibus est quod.\",\n       addresses: [\"mervin16@yahoo.com\"],\n       code: \"azure\",\n       note: \"Pariatur repellat dignissimos quas.\",\n       headline: \"Ipsa animi impedit officia.\",\n       instruction: \"Perspiciatis repudiandae doloribus.\",\n       website: \"http://ashly.net\"\n   },\n   area:\n   {\n       description: \"Borders\",\n       geometry:\n       {\n           type: \"Polygon\",\n           coordinates: [\n               [\n                   [44.184551651362, -1.6081961004244478],\n                   [41.21125601611241, -8.010221783743527],\n                   [37.854639889998076, -7.8464285284416935],\n                   [36.51791603953068, -11.054968936423933],\n                   [33.01453708697774, -15.497233831943916],\n                   [32.784868513491695, -13.29610438543305],\n                   [35.67894312439057, -7.63634997688592],\n                   [30.492728316323237, -8.692066624888076],\n                   [31.689532286539443, -2.864154032119321],\n                   [37.13965577600533, -5.922104559306792],\n                   [44.184551651362, -1.6081961004244478]\n               ]\n           ]\n       },\n       altitude: 3263313890770944,\n       ceiling: 2341686824927232\n   },\n   resources: [\n   {\n       description: \"Exercitationem nobis\",\n       mime: \"audio/evrc1\",\n       uri: \"https://s3.amazonaws.com/uifaces/faces/twitter/falvarad/128.jpg\"\n   }],\n   reportedAt: \"2018-09-05T06:51:49.629Z\",\n   expectedAt: \"2018-09-06T23:38:11.062Z\",\n   expiredAt: \"2018-09-29T09:45:30.790Z\",\n   occuredAt: \"2018-08-30T20:52:56.029Z\",\n   endedAt: \"2018-09-08T07:18:46.205Z\",\n   direction: \"Inbound\",\n   updatedAt: \"2018-10-01T17:38:26.066Z\",\n   createdAt: \"2018-10-01T17:38:26.066Z\"\n}",
+          "content": "{\n   \"_id\": \"5be1df42842d9d5bf8556da8\",\n   \"sender\": \"Vandervort\",\n   \"number\": \"55DAEB99-14C5-4009-9A84-EBF01D96D89C\",\n   \"status\": \"Exercise\",\n   \"type\": \"Error\",\n   \"scope\": \"Public\",\n   \"category\": \"Fire\",\n   \"event\": \"Omnis et delectus id omnis quibusdam.\",\n   \"response\": \"AllClear\",\n   \"urgency\": \"Past\",\n   \"severity\": \"Severe\",\n   \"certainty\": \"Observed\",\n   \"headline\": \"Autem sint hic dolorem quasi aliquam amet beatae.\",\n   \"description\": \"Ut voluptate quo voluptatem ea asperiores.\",\n   \"instruction\": \"Et doloremque odit alias optio nihil temporibus soluta.\",\n   \"url\": \"https://loyce.org\",\n   \"area\": \"Avon\",\n   \"geometry\":\n   {\n       \"type\": \"Polygon\",\n       \"coordinates\": [\n           [\n               [34.0962460876592, -6.027472074582597],\n               [36.14211410064278, -7.73276252407186],\n               [34.26678374339001, -11.052568169309106],\n               [37.9984237359413, -19.518211005210446],\n               [34.81395505104936, -16.756448591687228],\n               [33.1875973147786, -19.028057614810873],\n               [33.19738425670787, -11.327556097253908],\n               [29.532252395715762, -9.526871069904153],\n               [27.14333524479317, -5.2808693952369214],\n               [33.662964128882464, -10.049782036387153],\n               [34.0962460876592, -6.027472074582597]\n           ]\n       ]\n   },\n   \"centroid\":\n   {\n       \"type\": \"Point\",\n       \"coordinates\": [39.14056019762375, -3.7587456547395846]\n   },\n   \"reportedAt\": \"2018-09-30T05:05:28.689Z\",\n   \"expectedAt\": \"2018-10-29T11:29:16.562Z\",\n   \"expiredAt\": \"2018-10-25T05:35:26.462Z\",\n   \"direction\": \"Outbound\",\n   \"color\": \"#FE9901\",\n   \"updatedAt\": \"2018-11-06T18:36:50.998Z\",\n   \"createdAt\": \"2018-11-06T18:36:50.998Z\"\n}",
           "type": "json"
         }
       ]
@@ -457,73 +625,150 @@
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
             "optional": false,
             "field": "data.source",
-            "description": "<p>A party(or source or authority etc) issuing alert(or warning or notification).</p>"
+            "description": "<p>Human readable name of party(agency, authority etc) issuing(or generating) an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
+            "optional": true,
+            "field": "data.number",
+            "description": "<p>Human readable, system specific identifier of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "data.status",
+            "description": "<p>Human readable code denoting the appropriate handling of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "data.type",
+            "description": "<p>Human readable code denoting the nature of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "data.scope",
+            "description": "<p>Human readable code denoting the intended distribution of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "data.category",
+            "description": "<p>Human readable code denoting the category of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
             "optional": false,
             "field": "data.event",
-            "description": "<p>Denoting type of the subject of the alert.</p>"
+            "description": "<p>Human readable text denoting the subject of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "data.message",
-            "description": "<p>Denoting message of the alert.</p>"
+            "type": "String",
+            "optional": true,
+            "field": "data.response",
+            "description": "<p>Human readable code denoting the type of action recommended for the target audience as per instruction of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
+            "optional": true,
+            "field": "urgency",
+            "description": "<p>Human readable code denoting the urgency of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "data.severity",
+            "description": "<p>Human readable code denoting the severity of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "data.certainty",
+            "description": "<p>Human readable code denoting the certainty of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "data.headline",
+            "description": "<p>A brief human-readable headline(title) of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "data.description",
+            "description": "<p>An extended human readable description of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "data.instruction",
+            "description": "<p>Human readable text describing the recommended action to be taken by recipients of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "data.url",
+            "description": "<p>A full, absolute URI for an HTML page or other text resource with additional or reference information regarding an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
             "optional": false,
             "field": "data.area",
-            "description": "<p>Delineation of area(s) that may be affected by the alert.</p>"
+            "description": "<p>Human readble text describing the affected area(s) of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "Geometry",
             "optional": true,
-            "field": "data.resource",
-            "description": "<p>Additional file with supplemental information related to alert message e.g. an image or audio file.</p>"
+            "field": "data.geometry",
+            "description": "<p>The paired values of geo-points defining a geometry(i.e polygon, line etc) that delineates the affected area(s) of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Point",
+            "optional": true,
+            "field": "data.centroid",
+            "description": "<p>The centre of affected area of an alert.</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
-            "optional": false,
+            "optional": true,
             "field": "data.reportedAt",
-            "description": "<p>Date and time the alert was issued(or generated) by the alert source(or generator) e.g 2018-07-28 23:53:19 etc.</p>"
+            "description": "<p>Date and time when an alert was issued(or generated) by sender(source, generator).</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
             "optional": true,
             "field": "data.expectedAt",
-            "description": "<p>The expected time of the beginning of the subject event of the alert message e.g 2018-02-01T16:49:00</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Date",
-            "optional": false,
-            "field": "data.expiredAt",
-            "description": "<p>The expiry time of the information of the alert message e.g 2018-03-03T11:19:00</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Date",
-            "optional": false,
-            "field": "data.occuredAt",
-            "description": "<p>The effective time of the information of the alert message e.g e.g 2018-02-01T15:19:00</p>"
+            "description": "<p>The expected time of the beginning of an alert.</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
             "optional": true,
-            "field": "data.endedAt",
-            "description": "<p>The effective date and time when alert occurance ended e.g 2018-02-01T15:19:00</p>"
+            "field": "data.expiredAt",
+            "description": "<p>The expiry time of the information of an alert.</p>"
           },
           {
             "group": "Success 200",
@@ -531,7 +776,14 @@
             "optional": true,
             "field": "data.direction",
             "defaultValue": "Inbound",
-            "description": "<p>Human readable direction(received or given) of the alert i.e Inbound or Outbound.</p>"
+            "description": "<p>Human readable direction(received or given) of the alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "data.color",
+            "description": "<p>A color code(in hexadecimal format) used to differentiate an alert visually.</p>"
           },
           {
             "group": "Success 200",
@@ -601,7 +853,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\ndata:[\n {\n   _id: \"5bb25b91265be953c92f1521\",\n   source:\n   {\n       name: \"Nicolas - Gulgowski\",\n       phone: \"509.465.8501\",\n       email: \"phoebe_borer26@yahoo.com\",\n       website: \"https://waylon.com\"\n   },\n   event:\n   {\n       code: \"de2ed472-b3c5-44da-902d-51e96fc6e7ad\",\n       name: \"Sit sit nisi earum maiores commodi voluptatum illum.\",\n       category: \"Safety\",\n       description: \"Et et doloremque iusto nihil eos nam in consequatur.\",\n       urgency: \"Past\",\n       severity: \"Moderate\",\n       certainty: \"Unlikely\",\n       response: \"Shelter\"\n   },\n   message:\n   {\n       status: \"System\",\n       type: \"Ask\",\n       scope: \"Restricted\",\n       restriction: \"Necessitatibus est quod.\",\n       addresses: [\"mervin16@yahoo.com\"],\n       code: \"azure\",\n       note: \"Pariatur repellat dignissimos quas.\",\n       headline: \"Ipsa animi impedit officia.\",\n       instruction: \"Perspiciatis repudiandae doloribus.\",\n       website: \"http://ashly.net\"\n   },\n   area:\n   {\n       description: \"Borders\",\n       geometry:\n       {\n           type: \"Polygon\",\n           coordinates: [\n               [\n                   [44.184551651362, -1.6081961004244478],\n                   [41.21125601611241, -8.010221783743527],\n                   [37.854639889998076, -7.8464285284416935],\n                   [36.51791603953068, -11.054968936423933],\n                   [33.01453708697774, -15.497233831943916],\n                   [32.784868513491695, -13.29610438543305],\n                   [35.67894312439057, -7.63634997688592],\n                   [30.492728316323237, -8.692066624888076],\n                   [31.689532286539443, -2.864154032119321],\n                   [37.13965577600533, -5.922104559306792],\n                   [44.184551651362, -1.6081961004244478]\n               ]\n           ]\n       },\n       altitude: 3263313890770944,\n       ceiling: 2341686824927232\n   },\n   resources: [\n   {\n       description: \"Exercitationem nobis\",\n       mime: \"audio/evrc1\",\n       uri: \"https://s3.amazonaws.com/uifaces/faces/twitter/falvarad/128.jpg\"\n   }],\n   reportedAt: \"2018-09-05T06:51:49.629Z\",\n   expectedAt: \"2018-09-06T23:38:11.062Z\",\n   expiredAt: \"2018-09-29T09:45:30.790Z\",\n   occuredAt: \"2018-08-30T20:52:56.029Z\",\n   endedAt: \"2018-09-08T07:18:46.205Z\",\n   direction: \"Inbound\",\n   updatedAt: \"2018-10-01T17:38:26.066Z\",\n   createdAt: \"2018-10-01T17:38:26.066Z\"\n }\n],\ntotal: 10,\nsize: 2,\nlimit: 2,\nskip: 0,\npage: 1,\npages: 5,\nlastModified: \"2018-05-06T10:19:04.910Z\"\n}",
+          "content": "{\n   \"data\": [\n   {\n       \"sender\": \"Vandervort\",\n       \"number\": \"55DAEB99-14C5-4009-9A84-EBF01D96D89C\",\n       \"status\": \"Exercise\",\n       \"type\": \"Error\",\n       \"scope\": \"Public\",\n       \"category\": \"Fire\",\n       \"event\": \"Omnis et delectus id omnis quibusdam.\",\n       \"response\": \"AllClear\",\n       \"urgency\": \"Past\",\n       \"severity\": \"Severe\",\n       \"certainty\": \"Observed\",\n       \"headline\": \"Autem sint hic dolorem quasi aliquam amet beatae.\",\n       \"description\": \"Ut voluptate quo voluptatem ea asperiores et.\",\n       \"instruction\": \"Et doloremque odit alias optio nihil temporibus.\",\n       \"url\": \"https://loyce.org\",\n       \"area\": \"Avon\",\n       \"geometry\":\n       {\n           \"type\": \"Polygon\",\n           \"coordinates\": [\n               [\n                   [34.0962460876592, -6.027472074582597],\n                   [36.14211410064278, -7.73276252407186],\n                   [34.26678374339001, -11.052568169309106],\n                   [37.9984237359413, -19.518211005210446],\n                   [34.81395505104936, -16.756448591687228],\n                   [33.1875973147786, -19.028057614810873],\n                   [33.19738425670787, -11.327556097253908],\n                   [29.532252395715762, -9.526871069904153],\n                   [27.14333524479317, -5.2808693952369214],\n                   [33.662964128882464, -10.049782036387153],\n                   [34.0962460876592, -6.027472074582597]\n               ]\n           ]\n       },\n       \"centroid\":\n       {\n           \"type\": \"Point\",\n           \"coordinates\": [39.14056019762375, -3.7587456547395846]\n       },\n       \"reportedAt\": \"2018-09-30T05:05:28.689Z\",\n       \"expectedAt\": \"2018-10-29T11:29:16.562Z\",\n       \"expiredAt\": \"2018-10-25T05:35:26.462Z\",\n       \"direction\": \"Outbound\",\n       \"color\": \"#FE9901\",\n       \"_id\": \"5be1df42842d9d5bf8556da8\",\n       \"updatedAt\": \"2018-11-06T18:36:50.998Z\",\n       \"createdAt\": \"2018-11-06T18:36:50.998Z\"\n   }],\n   \"total\": 32,\n   \"size\": 10,\n   \"limit\": 10,\n   \"skip\": 0,\n   \"page\": 1,\n   \"pages\": 32,\n   \"lastModified\": \"2018-11-06T18:36:50.999Z\"\n}",
           "type": "json"
         }
       ]
@@ -700,73 +952,150 @@
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
             "optional": false,
             "field": "source",
-            "description": "<p>A party(or source or authority etc) issuing alert(or warning or notification).</p>"
+            "description": "<p>Human readable name of party(agency, authority etc) issuing(or generating) an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
+            "optional": true,
+            "field": "number",
+            "description": "<p>Human readable, system specific identifier of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "status",
+            "description": "<p>Human readable code denoting the appropriate handling of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "type",
+            "description": "<p>Human readable code denoting the nature of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "scope",
+            "description": "<p>Human readable code denoting the intended distribution of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "category",
+            "description": "<p>Human readable code denoting the category of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
             "optional": false,
             "field": "event",
-            "description": "<p>Denoting type of the subject of the alert.</p>"
+            "description": "<p>Human readable text denoting the subject of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "message",
-            "description": "<p>Denoting message of the alert.</p>"
+            "type": "String",
+            "optional": true,
+            "field": "response",
+            "description": "<p>Human readable code denoting the type of action recommended for the target audience as per instruction of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
+            "optional": true,
+            "field": "urgency",
+            "description": "<p>Human readable code denoting the urgency of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "severity",
+            "description": "<p>Human readable code denoting the severity of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "certainty",
+            "description": "<p>Human readable code denoting the certainty of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "headline",
+            "description": "<p>A brief human-readable headline(title) of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>An extended human readable description of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "instruction",
+            "description": "<p>Human readable text describing the recommended action to be taken by recipients of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "url",
+            "description": "<p>A full, absolute URI for an HTML page or other text resource with additional or reference information regarding an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
             "optional": false,
             "field": "area",
-            "description": "<p>Delineation of area(s) that may be affected by the alert.</p>"
+            "description": "<p>Human readble text describing the affected area(s) of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "Geometry",
             "optional": true,
-            "field": "resource",
-            "description": "<p>Additional file with supplemental information related to alert message e.g. an image or audio file.</p>"
+            "field": "geometry",
+            "description": "<p>The paired values of geo-points defining a geometry(i.e polygon, line etc) that delineates the affected area(s) of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Point",
+            "optional": true,
+            "field": "centroid",
+            "description": "<p>The centre of affected area of an alert.</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
-            "optional": false,
+            "optional": true,
             "field": "reportedAt",
-            "description": "<p>Date and time the alert was issued(or generated) by the alert source(or generator) e.g 2018-07-28 23:53:19 etc.</p>"
+            "description": "<p>Date and time when an alert was issued(or generated) by sender(source, generator).</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
             "optional": true,
             "field": "expectedAt",
-            "description": "<p>The expected time of the beginning of the subject event of the alert message e.g 2018-02-01T16:49:00</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Date",
-            "optional": false,
-            "field": "expiredAt",
-            "description": "<p>The expiry time of the information of the alert message e.g 2018-03-03T11:19:00</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Date",
-            "optional": false,
-            "field": "occuredAt",
-            "description": "<p>The effective time of the information of the alert message e.g e.g 2018-02-01T15:19:00</p>"
+            "description": "<p>The expected time of the beginning of an alert.</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
             "optional": true,
-            "field": "endedAt",
-            "description": "<p>The effective date and time when alert occurance ended e.g 2018-02-01T15:19:00</p>"
+            "field": "expiredAt",
+            "description": "<p>The expiry time of the information of an alert.</p>"
           },
           {
             "group": "Success 200",
@@ -774,7 +1103,14 @@
             "optional": true,
             "field": "direction",
             "defaultValue": "Inbound",
-            "description": "<p>Human readable direction(received or given) of the alert i.e Inbound or Outbound.</p>"
+            "description": "<p>Human readable direction(received or given) of the alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "color",
+            "description": "<p>A color code(in hexadecimal format) used to differentiate an alert visually.</p>"
           },
           {
             "group": "Success 200",
@@ -795,7 +1131,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n   _id: \"5bb25b91265be953c92f1521\",\n   source:\n   {\n       name: \"Nicolas - Gulgowski\",\n       phone: \"509.465.8501\",\n       email: \"phoebe_borer26@yahoo.com\",\n       website: \"https://waylon.com\"\n   },\n   event:\n   {\n       code: \"de2ed472-b3c5-44da-902d-51e96fc6e7ad\",\n       name: \"Sit sit nisi earum maiores commodi voluptatum illum.\",\n       category: \"Safety\",\n       description: \"Et et doloremque iusto nihil eos nam in consequatur.\",\n       urgency: \"Past\",\n       severity: \"Moderate\",\n       certainty: \"Unlikely\",\n       response: \"Shelter\"\n   },\n   message:\n   {\n       status: \"System\",\n       type: \"Ask\",\n       scope: \"Restricted\",\n       restriction: \"Necessitatibus est quod.\",\n       addresses: [\"mervin16@yahoo.com\"],\n       code: \"azure\",\n       note: \"Pariatur repellat dignissimos quas.\",\n       headline: \"Ipsa animi impedit officia.\",\n       instruction: \"Perspiciatis repudiandae doloribus.\",\n       website: \"http://ashly.net\"\n   },\n   area:\n   {\n       description: \"Borders\",\n       geometry:\n       {\n           type: \"Polygon\",\n           coordinates: [\n               [\n                   [44.184551651362, -1.6081961004244478],\n                   [41.21125601611241, -8.010221783743527],\n                   [37.854639889998076, -7.8464285284416935],\n                   [36.51791603953068, -11.054968936423933],\n                   [33.01453708697774, -15.497233831943916],\n                   [32.784868513491695, -13.29610438543305],\n                   [35.67894312439057, -7.63634997688592],\n                   [30.492728316323237, -8.692066624888076],\n                   [31.689532286539443, -2.864154032119321],\n                   [37.13965577600533, -5.922104559306792],\n                   [44.184551651362, -1.6081961004244478]\n               ]\n           ]\n       },\n       altitude: 3263313890770944,\n       ceiling: 2341686824927232\n   },\n   resources: [\n   {\n       description: \"Exercitationem nobis\",\n       mime: \"audio/evrc1\",\n       uri: \"https://s3.amazonaws.com/uifaces/faces/twitter/falvarad/128.jpg\"\n   }],\n   reportedAt: \"2018-09-05T06:51:49.629Z\",\n   expectedAt: \"2018-09-06T23:38:11.062Z\",\n   expiredAt: \"2018-09-29T09:45:30.790Z\",\n   occuredAt: \"2018-08-30T20:52:56.029Z\",\n   endedAt: \"2018-09-08T07:18:46.205Z\",\n   direction: \"Inbound\",\n   updatedAt: \"2018-10-01T17:38:26.066Z\",\n   createdAt: \"2018-10-01T17:38:26.066Z\"\n}",
+          "content": "{\n   \"_id\": \"5be1df42842d9d5bf8556da8\",\n   \"sender\": \"Vandervort\",\n   \"number\": \"55DAEB99-14C5-4009-9A84-EBF01D96D89C\",\n   \"status\": \"Exercise\",\n   \"type\": \"Error\",\n   \"scope\": \"Public\",\n   \"category\": \"Fire\",\n   \"event\": \"Omnis et delectus id omnis quibusdam.\",\n   \"response\": \"AllClear\",\n   \"urgency\": \"Past\",\n   \"severity\": \"Severe\",\n   \"certainty\": \"Observed\",\n   \"headline\": \"Autem sint hic dolorem quasi aliquam amet beatae.\",\n   \"description\": \"Ut voluptate quo voluptatem ea asperiores.\",\n   \"instruction\": \"Et doloremque odit alias optio nihil temporibus soluta.\",\n   \"url\": \"https://loyce.org\",\n   \"area\": \"Avon\",\n   \"geometry\":\n   {\n       \"type\": \"Polygon\",\n       \"coordinates\": [\n           [\n               [34.0962460876592, -6.027472074582597],\n               [36.14211410064278, -7.73276252407186],\n               [34.26678374339001, -11.052568169309106],\n               [37.9984237359413, -19.518211005210446],\n               [34.81395505104936, -16.756448591687228],\n               [33.1875973147786, -19.028057614810873],\n               [33.19738425670787, -11.327556097253908],\n               [29.532252395715762, -9.526871069904153],\n               [27.14333524479317, -5.2808693952369214],\n               [33.662964128882464, -10.049782036387153],\n               [34.0962460876592, -6.027472074582597]\n           ]\n       ]\n   },\n   \"centroid\":\n   {\n       \"type\": \"Point\",\n       \"coordinates\": [39.14056019762375, -3.7587456547395846]\n   },\n   \"reportedAt\": \"2018-09-30T05:05:28.689Z\",\n   \"expectedAt\": \"2018-10-29T11:29:16.562Z\",\n   \"expiredAt\": \"2018-10-25T05:35:26.462Z\",\n   \"direction\": \"Outbound\",\n   \"color\": \"#FE9901\",\n   \"updatedAt\": \"2018-11-06T18:36:50.998Z\",\n   \"createdAt\": \"2018-11-06T18:36:50.998Z\"\n}",
           "type": "json"
         }
       ]
@@ -894,73 +1230,150 @@
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
             "optional": false,
             "field": "source",
-            "description": "<p>A party(or source or authority etc) issuing alert(or warning or notification).</p>"
+            "description": "<p>Human readable name of party(agency, authority etc) issuing(or generating) an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
+            "optional": true,
+            "field": "number",
+            "description": "<p>Human readable, system specific identifier of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "status",
+            "description": "<p>Human readable code denoting the appropriate handling of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "type",
+            "description": "<p>Human readable code denoting the nature of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "scope",
+            "description": "<p>Human readable code denoting the intended distribution of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "category",
+            "description": "<p>Human readable code denoting the category of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
             "optional": false,
             "field": "event",
-            "description": "<p>Denoting type of the subject of the alert.</p>"
+            "description": "<p>Human readable text denoting the subject of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "message",
-            "description": "<p>Denoting message of the alert.</p>"
+            "type": "String",
+            "optional": true,
+            "field": "response",
+            "description": "<p>Human readable code denoting the type of action recommended for the target audience as per instruction of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
+            "optional": true,
+            "field": "urgency",
+            "description": "<p>Human readable code denoting the urgency of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "severity",
+            "description": "<p>Human readable code denoting the severity of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "certainty",
+            "description": "<p>Human readable code denoting the certainty of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "headline",
+            "description": "<p>A brief human-readable headline(title) of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>An extended human readable description of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "instruction",
+            "description": "<p>Human readable text describing the recommended action to be taken by recipients of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "url",
+            "description": "<p>A full, absolute URI for an HTML page or other text resource with additional or reference information regarding an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
             "optional": false,
             "field": "area",
-            "description": "<p>Delineation of area(s) that may be affected by the alert.</p>"
+            "description": "<p>Human readble text describing the affected area(s) of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "Geometry",
             "optional": true,
-            "field": "resource",
-            "description": "<p>Additional file with supplemental information related to alert message e.g. an image or audio file.</p>"
+            "field": "geometry",
+            "description": "<p>The paired values of geo-points defining a geometry(i.e polygon, line etc) that delineates the affected area(s) of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Point",
+            "optional": true,
+            "field": "centroid",
+            "description": "<p>The centre of affected area of an alert.</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
-            "optional": false,
+            "optional": true,
             "field": "reportedAt",
-            "description": "<p>Date and time the alert was issued(or generated) by the alert source(or generator) e.g 2018-07-28 23:53:19 etc.</p>"
+            "description": "<p>Date and time when an alert was issued(or generated) by sender(source, generator).</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
             "optional": true,
             "field": "expectedAt",
-            "description": "<p>The expected time of the beginning of the subject event of the alert message e.g 2018-02-01T16:49:00</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Date",
-            "optional": false,
-            "field": "expiredAt",
-            "description": "<p>The expiry time of the information of the alert message e.g 2018-03-03T11:19:00</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Date",
-            "optional": false,
-            "field": "occuredAt",
-            "description": "<p>The effective time of the information of the alert message e.g e.g 2018-02-01T15:19:00</p>"
+            "description": "<p>The expected time of the beginning of an alert.</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
             "optional": true,
-            "field": "endedAt",
-            "description": "<p>The effective date and time when alert occurance ended e.g 2018-02-01T15:19:00</p>"
+            "field": "expiredAt",
+            "description": "<p>The expiry time of the information of an alert.</p>"
           },
           {
             "group": "Success 200",
@@ -968,7 +1381,14 @@
             "optional": true,
             "field": "direction",
             "defaultValue": "Inbound",
-            "description": "<p>Human readable direction(received or given) of the alert i.e Inbound or Outbound.</p>"
+            "description": "<p>Human readable direction(received or given) of the alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "color",
+            "description": "<p>A color code(in hexadecimal format) used to differentiate an alert visually.</p>"
           },
           {
             "group": "Success 200",
@@ -989,7 +1409,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n   _id: \"5bb25b91265be953c92f1521\",\n   source:\n   {\n       name: \"Nicolas - Gulgowski\",\n       phone: \"509.465.8501\",\n       email: \"phoebe_borer26@yahoo.com\",\n       website: \"https://waylon.com\"\n   },\n   event:\n   {\n       code: \"de2ed472-b3c5-44da-902d-51e96fc6e7ad\",\n       name: \"Sit sit nisi earum maiores commodi voluptatum illum.\",\n       category: \"Safety\",\n       description: \"Et et doloremque iusto nihil eos nam in consequatur.\",\n       urgency: \"Past\",\n       severity: \"Moderate\",\n       certainty: \"Unlikely\",\n       response: \"Shelter\"\n   },\n   message:\n   {\n       status: \"System\",\n       type: \"Ask\",\n       scope: \"Restricted\",\n       restriction: \"Necessitatibus est quod.\",\n       addresses: [\"mervin16@yahoo.com\"],\n       code: \"azure\",\n       note: \"Pariatur repellat dignissimos quas.\",\n       headline: \"Ipsa animi impedit officia.\",\n       instruction: \"Perspiciatis repudiandae doloribus.\",\n       website: \"http://ashly.net\"\n   },\n   area:\n   {\n       description: \"Borders\",\n       geometry:\n       {\n           type: \"Polygon\",\n           coordinates: [\n               [\n                   [44.184551651362, -1.6081961004244478],\n                   [41.21125601611241, -8.010221783743527],\n                   [37.854639889998076, -7.8464285284416935],\n                   [36.51791603953068, -11.054968936423933],\n                   [33.01453708697774, -15.497233831943916],\n                   [32.784868513491695, -13.29610438543305],\n                   [35.67894312439057, -7.63634997688592],\n                   [30.492728316323237, -8.692066624888076],\n                   [31.689532286539443, -2.864154032119321],\n                   [37.13965577600533, -5.922104559306792],\n                   [44.184551651362, -1.6081961004244478]\n               ]\n           ]\n       },\n       altitude: 3263313890770944,\n       ceiling: 2341686824927232\n   },\n   resources: [\n   {\n       description: \"Exercitationem nobis\",\n       mime: \"audio/evrc1\",\n       uri: \"https://s3.amazonaws.com/uifaces/faces/twitter/falvarad/128.jpg\"\n   }],\n   reportedAt: \"2018-09-05T06:51:49.629Z\",\n   expectedAt: \"2018-09-06T23:38:11.062Z\",\n   expiredAt: \"2018-09-29T09:45:30.790Z\",\n   occuredAt: \"2018-08-30T20:52:56.029Z\",\n   endedAt: \"2018-09-08T07:18:46.205Z\",\n   direction: \"Inbound\",\n   updatedAt: \"2018-10-01T17:38:26.066Z\",\n   createdAt: \"2018-10-01T17:38:26.066Z\"\n}",
+          "content": "{\n   \"_id\": \"5be1df42842d9d5bf8556da8\",\n   \"sender\": \"Vandervort\",\n   \"number\": \"55DAEB99-14C5-4009-9A84-EBF01D96D89C\",\n   \"status\": \"Exercise\",\n   \"type\": \"Error\",\n   \"scope\": \"Public\",\n   \"category\": \"Fire\",\n   \"event\": \"Omnis et delectus id omnis quibusdam.\",\n   \"response\": \"AllClear\",\n   \"urgency\": \"Past\",\n   \"severity\": \"Severe\",\n   \"certainty\": \"Observed\",\n   \"headline\": \"Autem sint hic dolorem quasi aliquam amet beatae.\",\n   \"description\": \"Ut voluptate quo voluptatem ea asperiores.\",\n   \"instruction\": \"Et doloremque odit alias optio nihil temporibus soluta.\",\n   \"url\": \"https://loyce.org\",\n   \"area\": \"Avon\",\n   \"geometry\":\n   {\n       \"type\": \"Polygon\",\n       \"coordinates\": [\n           [\n               [34.0962460876592, -6.027472074582597],\n               [36.14211410064278, -7.73276252407186],\n               [34.26678374339001, -11.052568169309106],\n               [37.9984237359413, -19.518211005210446],\n               [34.81395505104936, -16.756448591687228],\n               [33.1875973147786, -19.028057614810873],\n               [33.19738425670787, -11.327556097253908],\n               [29.532252395715762, -9.526871069904153],\n               [27.14333524479317, -5.2808693952369214],\n               [33.662964128882464, -10.049782036387153],\n               [34.0962460876592, -6.027472074582597]\n           ]\n       ]\n   },\n   \"centroid\":\n   {\n       \"type\": \"Point\",\n       \"coordinates\": [39.14056019762375, -3.7587456547395846]\n   },\n   \"reportedAt\": \"2018-09-30T05:05:28.689Z\",\n   \"expectedAt\": \"2018-10-29T11:29:16.562Z\",\n   \"expiredAt\": \"2018-10-25T05:35:26.462Z\",\n   \"direction\": \"Outbound\",\n   \"color\": \"#FE9901\",\n   \"updatedAt\": \"2018-11-06T18:36:50.998Z\",\n   \"createdAt\": \"2018-11-06T18:36:50.998Z\"\n}",
           "type": "json"
         }
       ]
@@ -1088,73 +1508,150 @@
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
             "optional": false,
             "field": "source",
-            "description": "<p>A party(or source or authority etc) issuing alert(or warning or notification).</p>"
+            "description": "<p>Human readable name of party(agency, authority etc) issuing(or generating) an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
+            "optional": true,
+            "field": "number",
+            "description": "<p>Human readable, system specific identifier of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "status",
+            "description": "<p>Human readable code denoting the appropriate handling of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "type",
+            "description": "<p>Human readable code denoting the nature of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "scope",
+            "description": "<p>Human readable code denoting the intended distribution of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "category",
+            "description": "<p>Human readable code denoting the category of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
             "optional": false,
             "field": "event",
-            "description": "<p>Denoting type of the subject of the alert.</p>"
+            "description": "<p>Human readable text denoting the subject of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
-            "optional": false,
-            "field": "message",
-            "description": "<p>Denoting message of the alert.</p>"
+            "type": "String",
+            "optional": true,
+            "field": "response",
+            "description": "<p>Human readable code denoting the type of action recommended for the target audience as per instruction of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object",
+            "type": "String",
+            "optional": true,
+            "field": "urgency",
+            "description": "<p>Human readable code denoting the urgency of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "severity",
+            "description": "<p>Human readable code denoting the severity of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "certainty",
+            "description": "<p>Human readable code denoting the certainty of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "headline",
+            "description": "<p>A brief human-readable headline(title) of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "description",
+            "description": "<p>An extended human readable description of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "instruction",
+            "description": "<p>Human readable text describing the recommended action to be taken by recipients of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "url",
+            "description": "<p>A full, absolute URI for an HTML page or other text resource with additional or reference information regarding an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
             "optional": false,
             "field": "area",
-            "description": "<p>Delineation of area(s) that may be affected by the alert.</p>"
+            "description": "<p>Human readble text describing the affected area(s) of an alert.</p>"
           },
           {
             "group": "Success 200",
-            "type": "Object[]",
+            "type": "Geometry",
             "optional": true,
-            "field": "resource",
-            "description": "<p>Additional file with supplemental information related to alert message e.g. an image or audio file.</p>"
+            "field": "geometry",
+            "description": "<p>The paired values of geo-points defining a geometry(i.e polygon, line etc) that delineates the affected area(s) of an alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Point",
+            "optional": true,
+            "field": "centroid",
+            "description": "<p>The centre of affected area of an alert.</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
-            "optional": false,
+            "optional": true,
             "field": "reportedAt",
-            "description": "<p>Date and time the alert was issued(or generated) by the alert source(or generator) e.g 2018-07-28 23:53:19 etc.</p>"
+            "description": "<p>Date and time when an alert was issued(or generated) by sender(source, generator).</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
             "optional": true,
             "field": "expectedAt",
-            "description": "<p>The expected time of the beginning of the subject event of the alert message e.g 2018-02-01T16:49:00</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Date",
-            "optional": false,
-            "field": "expiredAt",
-            "description": "<p>The expiry time of the information of the alert message e.g 2018-03-03T11:19:00</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Date",
-            "optional": false,
-            "field": "occuredAt",
-            "description": "<p>The effective time of the information of the alert message e.g e.g 2018-02-01T15:19:00</p>"
+            "description": "<p>The expected time of the beginning of an alert.</p>"
           },
           {
             "group": "Success 200",
             "type": "Date",
             "optional": true,
-            "field": "endedAt",
-            "description": "<p>The effective date and time when alert occurance ended e.g 2018-02-01T15:19:00</p>"
+            "field": "expiredAt",
+            "description": "<p>The expiry time of the information of an alert.</p>"
           },
           {
             "group": "Success 200",
@@ -1162,7 +1659,14 @@
             "optional": true,
             "field": "direction",
             "defaultValue": "Inbound",
-            "description": "<p>Human readable direction(received or given) of the alert i.e Inbound or Outbound.</p>"
+            "description": "<p>Human readable direction(received or given) of the alert.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": true,
+            "field": "color",
+            "description": "<p>A color code(in hexadecimal format) used to differentiate an alert visually.</p>"
           },
           {
             "group": "Success 200",
@@ -1183,7 +1687,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n   _id: \"5bb25b91265be953c92f1521\",\n   source:\n   {\n       name: \"Nicolas - Gulgowski\",\n       phone: \"509.465.8501\",\n       email: \"phoebe_borer26@yahoo.com\",\n       website: \"https://waylon.com\"\n   },\n   event:\n   {\n       code: \"de2ed472-b3c5-44da-902d-51e96fc6e7ad\",\n       name: \"Sit sit nisi earum maiores commodi voluptatum illum.\",\n       category: \"Safety\",\n       description: \"Et et doloremque iusto nihil eos nam in consequatur.\",\n       urgency: \"Past\",\n       severity: \"Moderate\",\n       certainty: \"Unlikely\",\n       response: \"Shelter\"\n   },\n   message:\n   {\n       status: \"System\",\n       type: \"Ask\",\n       scope: \"Restricted\",\n       restriction: \"Necessitatibus est quod.\",\n       addresses: [\"mervin16@yahoo.com\"],\n       code: \"azure\",\n       note: \"Pariatur repellat dignissimos quas.\",\n       headline: \"Ipsa animi impedit officia.\",\n       instruction: \"Perspiciatis repudiandae doloribus.\",\n       website: \"http://ashly.net\"\n   },\n   area:\n   {\n       description: \"Borders\",\n       geometry:\n       {\n           type: \"Polygon\",\n           coordinates: [\n               [\n                   [44.184551651362, -1.6081961004244478],\n                   [41.21125601611241, -8.010221783743527],\n                   [37.854639889998076, -7.8464285284416935],\n                   [36.51791603953068, -11.054968936423933],\n                   [33.01453708697774, -15.497233831943916],\n                   [32.784868513491695, -13.29610438543305],\n                   [35.67894312439057, -7.63634997688592],\n                   [30.492728316323237, -8.692066624888076],\n                   [31.689532286539443, -2.864154032119321],\n                   [37.13965577600533, -5.922104559306792],\n                   [44.184551651362, -1.6081961004244478]\n               ]\n           ]\n       },\n       altitude: 3263313890770944,\n       ceiling: 2341686824927232\n   },\n   resources: [\n   {\n       description: \"Exercitationem nobis\",\n       mime: \"audio/evrc1\",\n       uri: \"https://s3.amazonaws.com/uifaces/faces/twitter/falvarad/128.jpg\"\n   }],\n   reportedAt: \"2018-09-05T06:51:49.629Z\",\n   expectedAt: \"2018-09-06T23:38:11.062Z\",\n   expiredAt: \"2018-09-29T09:45:30.790Z\",\n   occuredAt: \"2018-08-30T20:52:56.029Z\",\n   endedAt: \"2018-09-08T07:18:46.205Z\",\n   direction: \"Inbound\",\n   updatedAt: \"2018-10-01T17:38:26.066Z\",\n   createdAt: \"2018-10-01T17:38:26.066Z\"\n}",
+          "content": "{\n   \"_id\": \"5be1df42842d9d5bf8556da8\",\n   \"sender\": \"Vandervort\",\n   \"number\": \"55DAEB99-14C5-4009-9A84-EBF01D96D89C\",\n   \"status\": \"Exercise\",\n   \"type\": \"Error\",\n   \"scope\": \"Public\",\n   \"category\": \"Fire\",\n   \"event\": \"Omnis et delectus id omnis quibusdam.\",\n   \"response\": \"AllClear\",\n   \"urgency\": \"Past\",\n   \"severity\": \"Severe\",\n   \"certainty\": \"Observed\",\n   \"headline\": \"Autem sint hic dolorem quasi aliquam amet beatae.\",\n   \"description\": \"Ut voluptate quo voluptatem ea asperiores.\",\n   \"instruction\": \"Et doloremque odit alias optio nihil temporibus soluta.\",\n   \"url\": \"https://loyce.org\",\n   \"area\": \"Avon\",\n   \"geometry\":\n   {\n       \"type\": \"Polygon\",\n       \"coordinates\": [\n           [\n               [34.0962460876592, -6.027472074582597],\n               [36.14211410064278, -7.73276252407186],\n               [34.26678374339001, -11.052568169309106],\n               [37.9984237359413, -19.518211005210446],\n               [34.81395505104936, -16.756448591687228],\n               [33.1875973147786, -19.028057614810873],\n               [33.19738425670787, -11.327556097253908],\n               [29.532252395715762, -9.526871069904153],\n               [27.14333524479317, -5.2808693952369214],\n               [33.662964128882464, -10.049782036387153],\n               [34.0962460876592, -6.027472074582597]\n           ]\n       ]\n   },\n   \"centroid\":\n   {\n       \"type\": \"Point\",\n       \"coordinates\": [39.14056019762375, -3.7587456547395846]\n   },\n   \"reportedAt\": \"2018-09-30T05:05:28.689Z\",\n   \"expectedAt\": \"2018-10-29T11:29:16.562Z\",\n   \"expiredAt\": \"2018-10-25T05:35:26.462Z\",\n   \"direction\": \"Outbound\",\n   \"color\": \"#FE9901\",\n   \"updatedAt\": \"2018-11-06T18:36:50.998Z\",\n   \"createdAt\": \"2018-11-06T18:36:50.998Z\"\n}",
           "type": "json"
         }
       ]
@@ -1220,13 +1724,13 @@
     }
   },
   {
-    "description": "<p>Human readable, system specific code identifying the event type(incident type) of the alert e.g 2018090001, 20180001 etc.</p>",
+    "description": "<p>Human readable, system specific identifier of an alert.</p> <p>It consist of two letters to identify the disaster(or incident) type (e.g. EQ - earthquake); the year of the disaster; a six-digit, sequential disaster number; and the three-letter ISO code for country of occurrence e.g EQ-2001-000033-TZA.</p>",
     "type": "",
     "url": "",
     "version": "0.0.0",
-    "filename": "lib/alert.event.schema.js",
-    "group": "_home_lally_workspace_codetanzania_emis_alert_lib_alert_event_schema_js",
-    "groupTitle": "_home_lally_workspace_codetanzania_emis_alert_lib_alert_event_schema_js",
+    "filename": "lib/alert.model.js",
+    "group": "_home_lally_workspace_codetanzania_emis_alert_lib_alert_model_js",
+    "groupTitle": "_home_lally_workspace_codetanzania_emis_alert_lib_alert_model_js",
     "name": ""
   }
 ]
