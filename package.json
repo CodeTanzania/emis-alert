@@ -6,7 +6,8 @@
   "scripts": {
     "test": "grunt test",
     "integration": "grunt integration",
-    "dev": "BASE_PATH=./examples node ./examples/app.js"
+    "dev": "BASE_PATH=./examples node ./examples/app.js",
+    "worker": "BASE_PATH=./examples node ./examples/worker.js"
   },
   "repository": {
     "type": "git",
@@ -94,7 +95,7 @@
     "mocha": "^5.2.0",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.23",
-    "mongoose": "^5.3.10",
+    "mongoose": "^5.3.11",
     "mongoose-geojson-schemas": "^0.8.2",
     "mongoose-kue": "^0.7.1",
     "mongoose-rest-actions": "^0.20.2",
@@ -120,7 +121,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.23",
-    "mongoose": "^5.3.10",
+    "mongoose": "^5.3.11",
     "mongoose-geojson-schemas": "^0.8.2",
     "mongoose-kue": "^0.7.1",
     "mongoose-rest-actions": "^0.20.2",
