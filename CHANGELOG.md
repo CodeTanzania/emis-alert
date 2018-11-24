@@ -1,3 +1,9 @@
+# v1.2.0 - 2018-11-24  
+- Wire mongoose json schema to extract json schema from alert schema     
+- Add alerts/schema endpoint to expose Alert json schema
+- Force latest dependencies
+- Build latest apidoc
+
 # v1.1.0 - 2018-11-13
 - Build latest API doc
 - Add notification worker on example
