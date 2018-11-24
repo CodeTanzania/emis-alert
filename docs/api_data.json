@@ -557,6 +557,51 @@
   },
   {
     "type": "get",
+    "url": "/alerts/schema",
+    "title": "Get Alerts Schema",
+    "version": "1.0.0",
+    "name": "GetAlertSchema",
+    "group": "Alert",
+    "description": "<p>Returns alert json schema definition</p>",
+    "filename": "lib/alert.http.router.js",
+    "groupTitle": "",
+    "sampleRequest": [
+      {
+        "url": "https://emis-alert.herokuapp.com/v1/alerts/schema"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": true,
+            "field": "Accept",
+            "defaultValue": "application/json",
+            "description": "<p>Accepted content type</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Authorization token</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": true,
+            "field": "Accept-Encoding",
+            "defaultValue": "gzip, deflate",
+            "description": "<p>Accepted encoding type</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "get",
     "url": "/alerts",
     "title": "List Alerts",
     "version": "1.0.0",
