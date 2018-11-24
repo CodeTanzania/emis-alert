@@ -29,6 +29,8 @@
 /* dependencies */
 const path = require('path');
 const _ = require('lodash');
+const mongoose = require('mongoose');
+require('mongoose-schema-jsonschema')(mongoose);
 const app = require('@lykmapipo/express-common');
 
 
