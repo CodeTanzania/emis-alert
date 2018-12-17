@@ -1,6 +1,6 @@
 define({
   "name": "emis-alert",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A representation of an envelope(or payload) which carries disaster notifications(or warning) from source(s) to audience(s).",
   "title": "EMIS - Alert",
   "url": "https://emis-alert.herokuapp.com/v1",
@@ -13,7 +13,7 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2018-11-24T05:34:49.288Z",
+    "time": "2018-12-17T07:38:34.630Z",
     "url": "http://apidocjs.com",
     "version": "0.17.6"
   }
