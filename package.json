@@ -1,6 +1,6 @@
 {
   "name": "@codetanzania/emis-alert",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A representation of an envelope(or payload) which carries disaster notifications(or warning) from source(s) to audience(s).",
   "main": "index.js",
   "scripts": {

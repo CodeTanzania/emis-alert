@@ -1,3 +1,11 @@
+# v1.2.1 - 2018-12-17
+- Build latest apidoc
+- Reorganize dependencies
+- Apply taggable plugin
+- Force latest dependencies & audit fix
+- Improve package main jsdoc
+- Improve example app
+
 # v1.2.0 - 2018-11-24  
 - Wire mongoose json schema to extract json schema from alert schema     
 - Add alerts/schema endpoint to expose Alert json schema
