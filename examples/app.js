@@ -1,50 +1,44 @@
 'use strict';
 
 
-/* ensure mongo uri */
+/* ensure mongodb uri */
 process.env.MONGODB_URI =
   (process.env.MONGODB_URI || 'mongodb://localhost/emis-alert');
 
 
 /* dependencies */
 const path = require('path');
-const async = require('async');
-const mongoose = require('mongoose');
+const { waterfall } = require('async');
+const { include } = require('@lykmapipo/include');
+const { connect } = require('@lykmapipo/mongoose-common');
 const { Party } = require('@codetanzania/emis-stakeholder');
-const {
-  Alert,
-  apiVersion,
-  info,
-  app
-} = require(path.join(__dirname, '..'));
+const { Alert, info, app } = include(__dirname, '..');
 
 
-/* connect to mongoose */
-mongoose.connect(process.env.MONGODB_URI);
+// seeds
+const seedParties = (next) => Party.seed((error) => next(error));
+const seedAlerts = (next) => Alert.seed((error) => next(error));
 
-//boot
-async.waterfall([
 
-  function seedParties(next) {
-    Party.seed(next);
-  },
+// establish mongodb connection
+connect((error) => {
 
-  function seedAlerts(parties, next) {
-    Alert.seed(next);
-  }
+  // seed
+  waterfall([
+    seedParties, seedAlerts
+  ], (error, results) => {
 
-], (error, results) => {
-  /* expose module info */
-  app.get('/', (request, response) => {
-    response.status(200);
-    response.json(info);
-  });
+    // expose module info
+    app.get('/', (request, response) => {
+      response.status(200);
+      response.json(info);
+    });
 
-  /* fire the app */
-  app.start((error, env) => {
-    console.log(
-      `visit http://0.0.0.0:${env.PORT}/v${apiVersion}/alerts`
-    );
+    // fire the app
+    app.start((error, env) => {
+      console.log(`visit http://0.0.0.0:${env.PORT}`);
+    });
+
   });
 
 });
