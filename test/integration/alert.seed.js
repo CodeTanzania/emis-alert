@@ -5,16 +5,16 @@
 const path = require('path');
 const _ = require('lodash');
 const { expect } = require('chai');
-const { Alert } = require(path.join(__dirname, '..', '..'));
+const { include } = require('@lykmapipo/include');
+const { clear } = require('@lykmapipo/mongoose-test-helpers');
+const { Alert } = include(__dirname, '..', '..');
 
 describe('Alert Seed', () => {
 
   const SEEDS_PATH = process.env.SEEDS_PATH;
   let alerts = [];
 
-  before((done) => {
-    Alert.deleteMany(done);
-  });
+  before((done) => clear(done));
 
   before(() => {
     process.env.SEEDS_PATH = path.join(__dirname, '..', 'fixtures');
@@ -81,9 +81,7 @@ describe('Alert Seed', () => {
     });
   });
 
-  after((done) => {
-    Alert.deleteMany(done);
-  });
+  after((done) => clear(done));
 
   after(() => {
     process.env.SEEDS_PATH = SEEDS_PATH;

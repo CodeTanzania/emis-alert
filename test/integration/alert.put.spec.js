@@ -2,16 +2,15 @@
 
 
 /* dependencies */
-const path = require('path');
 const { expect } = require('chai');
-const { Alert } = require(path.join(__dirname, '..', '..'));
+const { include } = require('@lykmapipo/include');
+const { clear } = require('@lykmapipo/mongoose-test-helpers');
+const { Alert } = include(__dirname, '..', '..');
 
 
 describe('Alert Static Put', () => {
 
-  before((done) => {
-    Alert.deleteMany(done);
-  });
+  before((done) => clear(done));
 
   let alert = Alert.fake();
 
@@ -44,18 +43,14 @@ describe('Alert Static Put', () => {
     });
   });
 
-  after((done) => {
-    Alert.deleteMany(done);
-  });
+  after((done) => clear(done));
 
 });
 
 
 describe('Alert Instance Put', () => {
 
-  before((done) => {
-    Alert.deleteMany(done);
-  });
+  before((done) => clear(done));
 
   let alert = Alert.fake();
 
@@ -86,8 +81,6 @@ describe('Alert Instance Put', () => {
     });
   });
 
-  after((done) => {
-    Alert.deleteMany(done);
-  });
+  after((done) => clear(done));
 
 });
