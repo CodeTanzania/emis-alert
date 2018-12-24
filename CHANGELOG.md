@@ -1,3 +1,8 @@
+# v1.2.2 - 2018-12-24
+- Build latest apidoc
+- Force latest dependencies & audit fix
+- Refactor and improve specs readability
+
 # v1.2.1 - 2018-12-17
 - Build latest apidoc
 - Reorganize dependencies

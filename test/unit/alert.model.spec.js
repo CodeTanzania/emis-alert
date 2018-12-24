@@ -2,9 +2,9 @@
 
 
 /* dependencies */
-const path = require('path');
 const { expect } = require('chai');
-const Alert = require(path.join(__dirname, '..', '..', 'lib', 'alert.model'));
+const { include } = require('@lykmapipo/include');
+const { Alert } = include(__dirname, '..', '..');
 
 
 describe('Alert Instance', () => {

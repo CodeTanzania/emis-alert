@@ -2,17 +2,16 @@
 
 
 /* dependencies */
-const path = require('path');
 const faker = require('@benmaruchu/faker');
 const { expect } = require('chai');
-const { Alert } = require(path.join(__dirname, '..', '..'));
+const { include } = require('@lykmapipo/include');
+const { clear } = require('@lykmapipo/mongoose-test-helpers');
+const { Alert } = include(__dirname, '..', '..');
 
 
 describe('Alert Upsert', () => {
 
-  before((done) => {
-    Alert.deleteMany(done);
-  });
+  before((done) => clear(done));
 
   let alert;
 
@@ -86,8 +85,6 @@ describe('Alert Upsert', () => {
     });
   });
 
-  after((done) => {
-    Alert.deleteMany(done);
-  });
+  after((done) => clear(done));
 
 });

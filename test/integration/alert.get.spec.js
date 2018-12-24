@@ -2,17 +2,16 @@
 
 
 /* dependencies */
-const path = require('path');
 const _ = require('lodash');
 const { expect } = require('chai');
-const { Alert } = require(path.join(__dirname, '..', '..'));
+const { include } = require('@lykmapipo/include');
+const { clear } = require('@lykmapipo/mongoose-test-helpers');
+const { Alert } = include(__dirname, '..', '..');
 
 
 describe('Alert Get', () => {
 
-  before((done) => {
-    Alert.deleteMany(done);
-  });
+  before((done) => clear(done));
 
   let alerts = Alert.fake(32);
 
@@ -118,8 +117,6 @@ describe('Alert Get', () => {
     });
   });
 
-  after((done) => {
-    Alert.deleteMany(done);
-  });
+  after((done) => clear(done));
 
 });
