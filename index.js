@@ -33,6 +33,7 @@ const app = require('@lykmapipo/express-common');
 const pkg = include(__dirname, 'package.json');
 const AlertSource = include(__dirname, 'lib', 'source.model');
 const Alert = include(__dirname, 'lib', 'alert.model');
+const alertSourceRouter = include(__dirname, 'lib', 'source.http.router');
 const alertRouter = include(__dirname, 'lib', 'alert.http.router');
 
 
@@ -76,6 +77,18 @@ exports.Alert = Alert;
 
 
 /**
+ * @name alertSourceRouter
+ * @description alert http router
+ * @type {express.Router}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 1.0.0
+ * @version 0.1.0
+ */
+exports.alertSourceRouter = alertSourceRouter;
+
+
+/**
  * @name alertRouter
  * @description alert http router
  * @type {express.Router}
@@ -103,6 +116,7 @@ exports.apiVersion = alertRouter.apiVersion;
 Object.defineProperty(exports, 'app', {
   get() {
     /* @todo bind oauth middlewares authenticate, token, authorize */
+    app.mount(alertSourceRouter);
     app.mount(alertRouter);
     return app;
   }
