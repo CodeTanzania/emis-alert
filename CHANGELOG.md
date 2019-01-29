@@ -1,3 +1,10 @@
+#### 1.3.0 (2019-01-29)
+
+##### New Features
+
+*  implement alert source router ([6c674399](https://github.com/CodeTanzania/emis-alert/commit/6c6743999de31bb0d842552b45405a6eb0f3996c))
+*  implement alert source model ([0506ec59](https://github.com/CodeTanzania/emis-alert/commit/0506ec593f9d7e7b3903411edc602f7cd5705316))
+
 # v1.2.2 - 2018-12-24
 - Build latest apidoc
 - Force latest dependencies & audit fix
