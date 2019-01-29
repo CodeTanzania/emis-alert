@@ -31,6 +31,7 @@ const _ = require('lodash');
 const { include } = require('@lykmapipo/include');
 const app = require('@lykmapipo/express-common');
 const pkg = include(__dirname, 'package.json');
+const AlertSource = include(__dirname, 'lib', 'source.model');
 const Alert = include(__dirname, 'lib', 'alert.model');
 const alertRouter = include(__dirname, 'lib', 'alert.http.router');
 
@@ -48,6 +49,18 @@ exports.info = _.merge({}, _.pick(pkg, [
   'name', 'description', 'version', 'license',
   'homepage', 'repository', 'bugs', 'sandbox', 'contributors'
 ]));
+
+
+/**
+ * @name AlertSource
+ * @description AlertSource model
+ * @type {mongoose.Model}
+ *
+ * @author lally elias <lallyelias87@gmail.com>
+ * @since 1.0.0
+ * @version 0.1.0
+ */
+exports.AlertSource = AlertSource;
 
 
 /**
