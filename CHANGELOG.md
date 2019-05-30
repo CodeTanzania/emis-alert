@@ -1,3 +1,24 @@
+#### 1.4.0 (2019-05-30)
+
+##### Chores
+
+* **deps:**  force latest version & audit fix ([f05d71aa](https://github.com/CodeTanzania/emis-alert/commit/f05d71aaee752fc5d80d66372abd6e91155a7f4b))
+*  force latest dependencies ([158ef975](https://github.com/CodeTanzania/emis-alert/commit/158ef975a1ef42ceb08b89f4662d95202de74da2))
+
+##### New Features
+
+*  format alert dates on exports and reorder columns ([77328ee9](https://github.com/CodeTanzania/emis-alert/commit/77328ee905041cc8e08e7ad4550c1d479f807480))
+*  add export colum definition on Alert & Alert Source ([e88bd4ac](https://github.com/CodeTanzania/emis-alert/commit/e88bd4ac5e0e567f12f5ef82c8667369b6b0b53e))
+*  apply exprtable plugin to Alert and AlertSource models ([d7aa41a5](https://github.com/CodeTanzania/emis-alert/commit/d7aa41a5f725db2436153f9b42bd0003b03b70df))
+
+##### Bug Fixes
+
+*  update exportable plugins to remove unclered exportable fields ([4c09ef7c](https://github.com/CodeTanzania/emis-alert/commit/4c09ef7c3ee5b7d042bbcf97eab59c1c18ba8d68))
+
+##### Refactors
+
+* **deps:**  update to use latest dependencies api ([f5b05064](https://github.com/CodeTanzania/emis-alert/commit/f5b0506476861508670aed0b21f8e28ce946ea86))
+
 #### 1.3.0 (2019-01-29)
 
 ##### New Features
