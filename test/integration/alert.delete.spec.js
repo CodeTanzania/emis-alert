@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const { expect } = require('chai');
 const { include } = require('@lykmapipo/include');
@@ -8,19 +7,18 @@ const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { Alert } = include(__dirname, '..', '..');
 
 describe('Alert Static Delete', () => {
-
-  before((done) => clear(done));
+  before(done => clear(done));
 
   let alert = Alert.fake();
 
-  before((done) => {
+  before(done => {
     alert.post((error, created) => {
       alert = created;
       done(error, created);
     });
   });
 
-  it('should be able to delete', (done) => {
+  it('should be able to delete', done => {
     Alert.del(alert._id, (error, deleted) => {
       expect(error).to.not.exist;
       expect(deleted).to.exist;
@@ -29,7 +27,7 @@ describe('Alert Static Delete', () => {
     });
   });
 
-  it('should throw if not exists', (done) => {
+  it('should throw if not exists', done => {
     Alert.del(alert._id, (error, deleted) => {
       expect(error).to.exist;
       // expect(error.status).to.exist;
@@ -39,24 +37,22 @@ describe('Alert Static Delete', () => {
     });
   });
 
-  after((done) => clear(done));
-
+  after(done => clear(done));
 });
 
 describe('Alert Instance Delete', () => {
-
-  before((done) => clear(done));
+  before(done => clear(done));
 
   let alert = Alert.fake();
 
-  before((done) => {
+  before(done => {
     alert.post((error, created) => {
       alert = created;
       done(error, created);
     });
   });
 
-  it('should be able to delete', (done) => {
+  it('should be able to delete', done => {
     alert.del((error, deleted) => {
       expect(error).to.not.exist;
       expect(deleted).to.exist;
@@ -65,7 +61,7 @@ describe('Alert Instance Delete', () => {
     });
   });
 
-  it('should throw if not exists', (done) => {
+  it('should throw if not exists', done => {
     alert.del((error, deleted) => {
       expect(error).to.not.exist;
       expect(deleted).to.exist;
@@ -74,6 +70,5 @@ describe('Alert Instance Delete', () => {
     });
   });
 
-  after((done) => clear(done));
-
+  after(done => clear(done));
 });

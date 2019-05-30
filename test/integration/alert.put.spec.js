@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const _ = require('lodash');
 const { expect } = require('chai');
@@ -8,21 +7,19 @@ const { include } = require('@lykmapipo/include');
 const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { Alert } = include(__dirname, '..', '..');
 
-
 describe('Alert Static Put', () => {
-
-  before((done) => clear(done));
+  before(done => clear(done));
 
   let alert = Alert.fake();
 
-  before((done) => {
+  before(done => {
     alert.post((error, created) => {
       alert = created;
       done(error, created);
     });
   });
 
-  it('should be able to put', (done) => {
+  it('should be able to put', done => {
     alert = alert.fakeOnly('event');
     Alert.put(alert._id, alert, (error, updated) => {
       expect(error).to.not.exist;
@@ -33,7 +30,7 @@ describe('Alert Static Put', () => {
     });
   });
 
-  it('should throw if not exists', (done) => {
+  it('should throw if not exists', done => {
     const fake = Alert.fake().toObject();
     Alert.put(fake._id, _.omit(fake, '_id'), (error, updated) => {
       expect(error).to.exist;
@@ -44,25 +41,22 @@ describe('Alert Static Put', () => {
     });
   });
 
-  after((done) => clear(done));
-
+  after(done => clear(done));
 });
 
-
 describe('Alert Instance Put', () => {
-
-  before((done) => clear(done));
+  before(done => clear(done));
 
   let alert = Alert.fake();
 
-  before((done) => {
+  before(done => {
     alert.post((error, created) => {
       alert = created;
       done(error, created);
     });
   });
 
-  it('should be able to put', (done) => {
+  it('should be able to put', done => {
     alert = alert.fakeOnly('event');
     alert.put((error, updated) => {
       expect(error).to.not.exist;
@@ -73,7 +67,7 @@ describe('Alert Instance Put', () => {
     });
   });
 
-  it('should throw if not exists', (done) => {
+  it('should throw if not exists', done => {
     alert.put((error, updated) => {
       expect(error).to.not.exist;
       expect(updated).to.exist;
@@ -82,6 +76,5 @@ describe('Alert Instance Put', () => {
     });
   });
 
-  after((done) => clear(done));
-
+  after(done => clear(done));
 });

@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const { expect } = require('chai');
 const { include } = require('@lykmapipo/include');
@@ -8,7 +7,6 @@ const { Schema } = require('mongoose');
 const { AlertSource } = include(__dirname, '..', '..');
 
 describe('AlertSource Schema', () => {
-
   it('should have name field', () => {
     const name = AlertSource.path('name');
 
@@ -96,5 +94,4 @@ describe('AlertSource Schema', () => {
     expect(website.options.fake).to.exist;
     expect(website.options.fake).to.be.an('object');
   });
-
 });

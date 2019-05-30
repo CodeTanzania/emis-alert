@@ -1,20 +1,17 @@
 'use strict';
 
-
 /* dependencies */
 const { expect } = require('chai');
 const { include } = require('@lykmapipo/include');
 const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { Alert } = include(__dirname, '..', '..');
 
-
 describe('Alert Static Post', () => {
-
-  before((done) => clear(done));
+  before(done => clear(done));
 
   let alert = Alert.fake();
 
-  it('should be able to post', (done) => {
+  it('should be able to post', done => {
     Alert.post(alert, (error, created) => {
       expect(error).to.not.exist;
       expect(created).to.exist;
@@ -24,17 +21,15 @@ describe('Alert Static Post', () => {
     });
   });
 
-  after((done) => clear(done));
-
+  after(done => clear(done));
 });
 
 describe('Alert Instance Post', () => {
-
-  before((done) => clear(done));
+  before(done => clear(done));
 
   let alert = Alert.fake();
 
-  it('should be able to post', (done) => {
+  it('should be able to post', done => {
     alert.post((error, created) => {
       expect(error).to.not.exist;
       expect(created).to.exist;
@@ -44,6 +39,5 @@ describe('Alert Instance Post', () => {
     });
   });
 
-  after((done) => clear(done));
-
+  after(done => clear(done));
 });

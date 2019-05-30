@@ -1,6 +1,5 @@
 'use strict';
 
-
 /**
  * @name emis-alert
  * @description A representation of an envelope(or payload) which carries
@@ -25,7 +24,6 @@
  *
  */
 
-
 /* dependencies */
 const _ = require('lodash');
 const { include } = require('@lykmapipo/include');
@@ -36,7 +34,6 @@ const Alert = include(__dirname, 'lib', 'alert.model');
 const alertSourceRouter = include(__dirname, 'lib', 'source.http.router');
 const alertRouter = include(__dirname, 'lib', 'alert.http.router');
 
-
 /**
  * @name info
  * @description package information
@@ -46,11 +43,20 @@ const alertRouter = include(__dirname, 'lib', 'alert.http.router');
  * @since 1.0.0
  * @version 0.1.0
  */
-exports.info = _.merge({}, _.pick(pkg, [
-  'name', 'description', 'version', 'license',
-  'homepage', 'repository', 'bugs', 'sandbox', 'contributors'
-]));
-
+exports.info = _.merge(
+  {},
+  _.pick(pkg, [
+    'name',
+    'description',
+    'version',
+    'license',
+    'homepage',
+    'repository',
+    'bugs',
+    'sandbox',
+    'contributors',
+  ])
+);
 
 /**
  * @name AlertSource
@@ -63,7 +69,6 @@ exports.info = _.merge({}, _.pick(pkg, [
  */
 exports.AlertSource = AlertSource;
 
-
 /**
  * @name Alert
  * @description Alert model
@@ -74,7 +79,6 @@ exports.AlertSource = AlertSource;
  * @version 0.1.0
  */
 exports.Alert = Alert;
-
 
 /**
  * @name alertSourceRouter
@@ -87,7 +91,6 @@ exports.Alert = Alert;
  */
 exports.alertSourceRouter = alertSourceRouter;
 
-
 /**
  * @name alertRouter
  * @description alert http router
@@ -98,7 +101,6 @@ exports.alertSourceRouter = alertSourceRouter;
  * @version 0.1.0
  */
 exports.alertRouter = alertRouter;
-
 
 /**
  * @name apiVersion
@@ -111,7 +113,6 @@ exports.alertRouter = alertRouter;
  */
 exports.apiVersion = alertRouter.version;
 
-
 /* export app */
 Object.defineProperty(exports, 'app', {
   get() {
@@ -119,5 +120,5 @@ Object.defineProperty(exports, 'app', {
     mount(alertSourceRouter);
     mount(alertRouter);
     return app;
-  }
+  },
 });

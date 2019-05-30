@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const request = require('supertest');
 const { expect } = require('chai');
@@ -8,14 +7,12 @@ const { include } = require('@lykmapipo/include');
 const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { Alert, apiVersion, app } = include(__dirname, '..', '..');
 
-
-describe('Alert Rest API', function () {
-
-  before((done) => clear(done));
+describe('Alert Rest API', function() {
+  before(done => clear(done));
 
   let alert = Alert.fake();
 
-  it('should handle HTTP POST on /alerts', (done) => {
+  it('should handle HTTP POST on /alerts', done => {
     request(app)
       .post(`/${apiVersion}/alerts`)
       .set('Accept', 'application/json')
@@ -39,7 +36,7 @@ describe('Alert Rest API', function () {
       });
   });
 
-  it('should handle HTTP GET on /alerts', (done) => {
+  it('should handle HTTP GET on /alerts', done => {
     request(app)
       .get(`/${apiVersion}/alerts`)
       .set('Accept', 'application/json')
@@ -62,7 +59,7 @@ describe('Alert Rest API', function () {
       });
   });
 
-  it('should handle HTTP GET on /alerts/id:', (done) => {
+  it('should handle HTTP GET on /alerts/id:', done => {
     request(app)
       .get(`/${apiVersion}/alerts/${alert._id}`)
       .set('Accept', 'application/json')
@@ -81,7 +78,7 @@ describe('Alert Rest API', function () {
       });
   });
 
-  it('should handle HTTP PATCH on /alerts/id:', (done) => {
+  it('should handle HTTP PATCH on /alerts/id:', done => {
     const { name } = alert.fakeOnly('name');
     request(app)
       .patch(`/${apiVersion}/alerts/${alert._id}`)
@@ -106,7 +103,7 @@ describe('Alert Rest API', function () {
       });
   });
 
-  it('should handle HTTP PUT on /alerts/id:', (done) => {
+  it('should handle HTTP PUT on /alerts/id:', done => {
     const { name } = alert.fakeOnly('name');
     request(app)
       .put(`/${apiVersion}/alerts/${alert._id}`)
@@ -131,7 +128,7 @@ describe('Alert Rest API', function () {
       });
   });
 
-  it('should handle HTTP DELETE on /alerts/:id', (done) => {
+  it('should handle HTTP DELETE on /alerts/:id', done => {
     request(app)
       .delete(`/${apiVersion}/alerts/${alert._id}`)
       .set('Accept', 'application/json')
@@ -149,6 +146,5 @@ describe('Alert Rest API', function () {
       });
   });
 
-  after((done) => clear(done));
-
+  after(done => clear(done));
 });
