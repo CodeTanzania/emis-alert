@@ -7,7 +7,8 @@
     "test": "grunt test",
     "integration": "grunt integration",
     "dev": "BASE_PATH=./examples node ./examples/app.js",
-    "worker": "BASE_PATH=./examples node ./examples/worker.js"
+    "worker": "BASE_PATH=./examples node ./examples/worker.js",
+    "format": "prettier --write \"{lib,test,.}/**/*.js\" --loglevel silent"
   },
   "repository": {
     "type": "git",
@@ -59,28 +60,14 @@
       {
         "resource": "AlertSource",
         "link": "https://emis-alert.herokuapp.com/v1/alertsources",
-        "scopes": [
-          "alertsource:*"
-        ],
-        "methods": [
-          "get",
-          "post",
-          "put",
-          "patch"
-        ]
+        "scopes": ["alertsource:*"],
+        "methods": ["get", "post", "put", "patch"]
       },
       {
         "resource": "Alert",
         "link": "https://emis-alert.herokuapp.com/v1/alerts",
-        "scopes": [
-          "alert:*"
-        ],
-        "methods": [
-          "get",
-          "post",
-          "put",
-          "patch"
-        ]
+        "scopes": ["alert:*"],
+        "methods": ["get", "post", "put", "patch"]
       }
     ]
   },
@@ -98,6 +85,7 @@
     "jshint-stylish": "^2.2.1",
     "mocha": "^6.1.4",
     "mongoose": ">=5.5.11",
+    "prettier": "^1.17.1",
     "supertest": "^4.0.2"
   },
   "peerDependencies": {
