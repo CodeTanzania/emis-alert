@@ -29,7 +29,7 @@
 /* dependencies */
 const _ = require('lodash');
 const { include } = require('@lykmapipo/include');
-const app = require('@lykmapipo/express-common');
+const { app, mount } = require('@lykmapipo/express-common');
 const pkg = include(__dirname, 'package.json');
 const AlertSource = include(__dirname, 'lib', 'source.model');
 const Alert = include(__dirname, 'lib', 'alert.model');
@@ -109,15 +109,15 @@ exports.alertRouter = alertRouter;
  * @since 1.0.0
  * @version 0.1.0
  */
-exports.apiVersion = alertRouter.apiVersion;
+exports.apiVersion = alertRouter.version;
 
 
 /* export app */
 Object.defineProperty(exports, 'app', {
   get() {
     /* @todo bind oauth middlewares authenticate, token, authorize */
-    app.mount(alertSourceRouter);
-    app.mount(alertRouter);
+    mount(alertSourceRouter);
+    mount(alertRouter);
     return app;
   }
 });

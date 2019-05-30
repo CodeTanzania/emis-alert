@@ -7,7 +7,14 @@ const { waterfall } = require('async');
 const { include } = require('@lykmapipo/include');
 const { connect } = require('@lykmapipo/mongoose-common');
 const { Party } = require('@codetanzania/emis-stakeholder');
-const { AlertSource, Alert, info, app } = include(__dirname, '..');
+const { get, start, mount } = require('@lykmapipo/express-common');
+const {
+  AlertSource,
+  Alert,
+  info,
+  alertSourceRouter,
+  alertRouter
+} = include(__dirname, '..');
 
 
 // seeds
@@ -30,14 +37,16 @@ connect(error => {
     // re-throw if error
     if (error) { throw error; }
 
+    mount(alertSourceRouter, alertRouter);
+
     // expose module info
-    app.get('/', (request, response) => {
+    get('/', (request, response) => {
       response.status(200);
       response.json(info);
     });
 
     // fire the app
-    app.start((error, env) => {
+    start((error, env) => {
       // re-throw if error
       if (error) { throw error; }
 

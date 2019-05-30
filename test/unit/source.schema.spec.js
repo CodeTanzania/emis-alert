@@ -36,7 +36,7 @@ describe('AlertSource Schema', () => {
     expect(mobile.options.type).to.exist;
     expect(mobile.options.trim).to.be.true;
     expect(mobile.options.required).to.be.true;
-    expect(mobile.options.phone).to.be.true;
+    // expect(mobile.options.phone).to.be.true;
     expect(mobile.options.index).to.be.true;
     expect(mobile.options.unique).to.be.true;
     expect(mobile.options.searchable).to.be.true;
