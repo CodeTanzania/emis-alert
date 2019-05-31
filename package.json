@@ -60,14 +60,28 @@
       {
         "resource": "AlertSource",
         "link": "https://emis-alert.herokuapp.com/v1/alertsources",
-        "scopes": ["alertsource:*"],
-        "methods": ["get", "post", "put", "patch"]
+        "scopes": [
+          "alertsource:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
       },
       {
         "resource": "Alert",
         "link": "https://emis-alert.herokuapp.com/v1/alerts",
-        "scopes": ["alert:*"],
-        "methods": ["get", "post", "put", "patch"]
+        "scopes": [
+          "alert:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
       }
     ]
   },
