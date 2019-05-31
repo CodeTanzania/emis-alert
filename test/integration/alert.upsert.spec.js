@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const faker = require('@benmaruchu/faker');
 const { expect } = require('chai');
@@ -8,14 +7,12 @@ const { include } = require('@lykmapipo/include');
 const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { Alert } = include(__dirname, '..', '..');
 
-
 describe('Alert Upsert', () => {
-
-  before((done) => clear(done));
+  before(done => clear(done));
 
   let alert;
 
-  beforeEach((done) => {
+  beforeEach(done => {
     alert = Alert.fakeExcept('description');
     alert.post((error, created) => {
       alert = created;
@@ -23,7 +20,7 @@ describe('Alert Upsert', () => {
     });
   });
 
-  it('should be able upsert non existing', (done) => {
+  it('should be able upsert non existing', done => {
     Alert.upsert(alert, (error, upserted) => {
       expect(error).to.not.exist;
       expect(upserted).to.exist;
@@ -38,10 +35,10 @@ describe('Alert Upsert', () => {
     });
   });
 
-  it('should be able upsert existing by _id', (done) => {
+  it('should be able upsert existing by _id', done => {
     const updates = {
       _id: alert._id,
-      description: faker.lorem.sentence()
+      description: faker.lorem.sentence(),
     };
     Alert.upsert(updates, (error, upserted) => {
       expect(error).to.not.exist;
@@ -60,13 +57,13 @@ describe('Alert Upsert', () => {
     });
   });
 
-  it('should be able upsert existing by fields', (done) => {
+  it('should be able upsert existing by fields', done => {
     const updates = {
       source: alert.source,
       number: alert.number,
       category: alert.category,
       event: alert.event,
-      description: faker.lorem.sentence()
+      description: faker.lorem.sentence(),
     };
     Alert.upsert(updates, (error, upserted) => {
       expect(error).to.not.exist;
@@ -85,6 +82,5 @@ describe('Alert Upsert', () => {
     });
   });
 
-  after((done) => clear(done));
-
+  after(done => clear(done));
 });

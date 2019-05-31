@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const path = require('path');
 const _ = require('lodash');
@@ -10,17 +9,16 @@ const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { Alert } = include(__dirname, '..', '..');
 
 describe('Alert Seed', () => {
-
   const SEEDS_PATH = process.env.SEEDS_PATH;
   let alerts = [];
 
-  before((done) => clear(done));
+  before(done => clear(done));
 
   before(() => {
     process.env.SEEDS_PATH = path.join(__dirname, '..', 'fixtures');
   });
 
-  it('should seed provided', (done) => {
+  it('should seed provided', done => {
     const seed = Alert.fake();
     Alert.seed(seed, (error, seeded) => {
       expect(error).to.not.exist;
@@ -35,7 +33,7 @@ describe('Alert Seed', () => {
     });
   });
 
-  it('should seed provided', (done) => {
+  it('should seed provided', done => {
     const seed = [Alert.fake(), Alert.fake()];
     Alert.seed(seed, (error, seeded) => {
       expect(error).to.not.exist;
@@ -51,7 +49,7 @@ describe('Alert Seed', () => {
     });
   });
 
-  it('should not throw if provided exist', (done) => {
+  it('should not throw if provided exist', done => {
     Alert.seed(alerts, (error, seeded) => {
       expect(error).to.not.exist;
       expect(seeded).to.exist;
@@ -62,7 +60,7 @@ describe('Alert Seed', () => {
     });
   });
 
-  it('should be able to seed from environment', (done) => {
+  it('should be able to seed from environment', done => {
     Alert.seed((error, seeded) => {
       expect(error).to.not.exist;
       expect(seeded).to.exist;
@@ -72,7 +70,7 @@ describe('Alert Seed', () => {
     });
   });
 
-  it('should not throw if seed from environment exist', (done) => {
+  it('should not throw if seed from environment exist', done => {
     Alert.seed((error, seeded) => {
       expect(error).to.not.exist;
       expect(seeded).to.exist;
@@ -81,10 +79,9 @@ describe('Alert Seed', () => {
     });
   });
 
-  after((done) => clear(done));
+  after(done => clear(done));
 
   after(() => {
     process.env.SEEDS_PATH = SEEDS_PATH;
   });
-
 });

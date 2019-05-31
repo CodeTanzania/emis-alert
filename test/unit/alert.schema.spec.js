@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const { expect } = require('chai');
 const { include } = require('@lykmapipo/include');
@@ -24,11 +23,10 @@ const {
   CERTAINTIES,
   DEFAULT_CERTAINTY,
   DIRECTIONS,
-  DEFAULT_DIRECTION
+  DEFAULT_DIRECTION,
 } = Alert;
 
 describe('Alert Schema', () => {
-
   it('should have source field', () => {
     const source = Alert.path('source');
 
@@ -356,5 +354,4 @@ describe('Alert Schema', () => {
     expect(direction.options.fake).to.exist;
     expect(direction.options.fake).to.be.true;
   });
-
 });
