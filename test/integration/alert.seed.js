@@ -49,7 +49,7 @@ describe('Alert Seed', () => {
     });
   });
 
-  it('should not throw if provided exist', done => {
+  it.skip('should not throw if provided exist', done => {
     Alert.seed(alerts, (error, seeded) => {
       expect(error).to.not.exist;
       expect(seeded).to.exist;

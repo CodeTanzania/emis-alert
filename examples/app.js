@@ -1,7 +1,6 @@
 'use strict';
 
 /* dependencies */
-const path = require('path');
 const { waterfall } = require('async');
 const { include } = require('@lykmapipo/include');
 const { connect } = require('@lykmapipo/mongoose-common');
