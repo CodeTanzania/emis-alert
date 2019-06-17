@@ -1,6 +1,6 @@
 {
   "name": "@codetanzania/emis-alert",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A representation of an envelope(or payload) which carries disaster notifications(or warning) from source(s) to audience(s).",
   "main": "index.js",
   "scripts": {
@@ -60,28 +60,14 @@
       {
         "resource": "AlertSource",
         "link": "https://emis-alert.herokuapp.com/v1/alertsources",
-        "scopes": [
-          "alertsource:*"
-        ],
-        "methods": [
-          "get",
-          "post",
-          "put",
-          "patch"
-        ]
+        "scopes": ["alertsource:*"],
+        "methods": ["get", "post", "put", "patch"]
       },
       {
         "resource": "Alert",
         "link": "https://emis-alert.herokuapp.com/v1/alerts",
-        "scopes": [
-          "alert:*"
-        ],
-        "methods": [
-          "get",
-          "post",
-          "put",
-          "patch"
-        ]
+        "scopes": ["alert:*"],
+        "methods": ["get", "post", "put", "patch"]
       }
     ]
   },
