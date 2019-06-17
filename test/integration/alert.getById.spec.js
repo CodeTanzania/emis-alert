@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* dependencies */
 const _ = require('lodash');
 const { expect } = require('chai');
@@ -8,21 +7,19 @@ const { include } = require('@lykmapipo/include');
 const { clear } = require('@lykmapipo/mongoose-test-helpers');
 const { Alert } = include(__dirname, '..', '..');
 
-
 describe('Alert getById', () => {
-
-  before((done) => clear(done));
+  before(done => clear(done));
 
   let alert = Alert.fake();
 
-  before((done) => {
+  before(done => {
     alert.post((error, created) => {
       alert = created;
       done(error, created);
     });
   });
 
-  it('should be able to get an instance', (done) => {
+  it('should be able to get an instance', done => {
     Alert.getById(alert._id, (error, found) => {
       expect(error).to.not.exist;
       expect(found).to.exist;
@@ -31,10 +28,10 @@ describe('Alert getById', () => {
     });
   });
 
-  it('should be able to get with options', (done) => {
+  it('should be able to get with options', done => {
     const options = {
       _id: alert._id,
-      select: 'event'
+      select: 'event',
     };
 
     Alert.getById(options, (error, found) => {
@@ -46,20 +43,14 @@ describe('Alert getById', () => {
       //...assert selection
       const fields = _.keys(found.toObject());
       expect(fields).to.have.length(2);
-      _.map([
-        'status',
-        'scope',
-        'createdAt',
-        'updatedAt'
-      ], function (field) {
+      _.map(['status', 'scope', 'createdAt', 'updatedAt'], function(field) {
         expect(fields).to.not.include(field);
       });
       done(error, found);
     });
-
   });
 
-  it('should throw if not exists', (done) => {
+  it('should throw if not exists', done => {
     const alert = Alert.fake();
     Alert.getById(alert._id, (error, found) => {
       expect(error).to.exist;
@@ -70,6 +61,5 @@ describe('Alert getById', () => {
     });
   });
 
-  after((done) => clear(done));
-
+  after(done => clear(done));
 });

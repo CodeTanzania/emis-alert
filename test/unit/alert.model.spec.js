@@ -1,14 +1,11 @@
 'use strict';
 
-
 /* dependencies */
 const { expect } = require('chai');
 const { include } = require('@lykmapipo/include');
 const { Alert } = include(__dirname, '..', '..');
 
-
 describe('Alert Instance', () => {
-
   it('`preValidate` should be a function', () => {
     const alert = Alert.fake();
     expect(alert.preValidate).to.exist;
@@ -17,32 +14,30 @@ describe('Alert Instance', () => {
     expect(alert.preValidate.name).to.be.equal('preValidate');
   });
 
-  it('`preValidate` should set number', (done) => {
+  it('`preValidate` should set number', done => {
     const alert = Alert.fake();
     alert.number = undefined;
     expect(alert.number).to.not.exist;
 
-    alert.preValidate((error) => {
+    alert.preValidate(error => {
       expect(alert.number).to.exist;
       done(error);
     });
   });
 
-  it('`preValidate` should set color', (done) => {
+  it('`preValidate` should set color', done => {
     const alert = Alert.fake();
     alert.color = undefined;
     expect(alert.color).to.not.exist;
 
-    alert.preValidate((error) => {
+    alert.preValidate(error => {
       expect(alert.color).to.exist;
       done(error);
     });
   });
-
 });
 
 describe('Alert Statics', () => {
-
   it('should expose model name', () => {
     expect(Alert.MODEL_NAME).to.exist;
     expect(Alert.MODEL_NAME).to.be.eql('Alert');
@@ -67,9 +62,11 @@ describe('Alert Statics', () => {
 
     expect(Alert.STATUSES).to.exist;
     expect(Alert.STATUSES).to.be.eql([
-      'Actual', 'Exercise',
-      'System', 'Draft',
-      'Test'
+      'Actual',
+      'Exercise',
+      'System',
+      'Draft',
+      'Test',
     ]);
   });
 
@@ -78,10 +75,7 @@ describe('Alert Statics', () => {
     expect(Alert.DEFAULT_SCOPE).to.be.eql('Private');
 
     expect(Alert.SCOPES).to.exist;
-    expect(Alert.SCOPES).to.be.eql([
-      'Public', 'Restricted',
-      'Private'
-    ]);
+    expect(Alert.SCOPES).to.be.eql(['Public', 'Restricted', 'Private']);
   });
 
   it('should expose categories', () => {
@@ -90,12 +84,18 @@ describe('Alert Statics', () => {
 
     expect(Alert.CATEGORIES).to.exist;
     expect(Alert.CATEGORIES).to.be.eql([
-      'Geo', 'Met',
-      'Safety', 'Security',
-      'Rescue', 'Fire',
-      'Health', 'Env',
-      'Transport', 'Infra',
-      'CBRNE', 'Other'
+      'Geo',
+      'Met',
+      'Safety',
+      'Security',
+      'Rescue',
+      'Fire',
+      'Health',
+      'Env',
+      'Transport',
+      'Infra',
+      'CBRNE',
+      'Other',
     ]);
   });
 
@@ -105,9 +105,11 @@ describe('Alert Statics', () => {
 
     expect(Alert.TYPES).to.exist;
     expect(Alert.TYPES).to.be.eql([
-      'Alert', 'Update',
-      'Cancel', 'Error',
-      'Ask'
+      'Alert',
+      'Update',
+      'Cancel',
+      'Error',
+      'Ask',
     ]);
   });
 
@@ -117,11 +119,15 @@ describe('Alert Statics', () => {
 
     expect(Alert.RESPONSES).to.exist;
     expect(Alert.RESPONSES).to.be.eql([
-      'Shelter', 'Evacuate',
-      'Prepare', 'Execute',
-      'Avoid', 'Monitor',
-      'Assess', 'AllClear',
-      'None'
+      'Shelter',
+      'Evacuate',
+      'Prepare',
+      'Execute',
+      'Avoid',
+      'Monitor',
+      'Assess',
+      'AllClear',
+      'None',
     ]);
   });
 
@@ -131,9 +137,11 @@ describe('Alert Statics', () => {
 
     expect(Alert.URGENCIES).to.exist;
     expect(Alert.URGENCIES).to.be.eql([
-      'Immediate', 'Expected',
-      'Future', 'Past',
-      'Unknown'
+      'Immediate',
+      'Expected',
+      'Future',
+      'Past',
+      'Unknown',
     ]);
   });
 
@@ -143,9 +151,11 @@ describe('Alert Statics', () => {
 
     expect(Alert.SEVERITIES).to.exist;
     expect(Alert.SEVERITIES).to.be.eql([
-      'Extreme', 'Severe',
-      'Moderate', 'Minor',
-      'Unknown'
+      'Extreme',
+      'Severe',
+      'Moderate',
+      'Minor',
+      'Unknown',
     ]);
   });
 
@@ -155,9 +165,11 @@ describe('Alert Statics', () => {
 
     expect(Alert.CERTAINTIES).to.exist;
     expect(Alert.CERTAINTIES).to.be.eql([
-      'Observed', 'Likely',
-      'Possible', 'Unlikely',
-      'Unknown'
+      'Observed',
+      'Likely',
+      'Possible',
+      'Unlikely',
+      'Unknown',
     ]);
   });
 
@@ -186,16 +198,14 @@ describe('Alert Statics', () => {
       COLOR_MINOR: '#88E729',
       COLOR_MODERATE: '#FFFF00',
       COLOR_SEVERE: '#FE9901',
-      COLOR_EXTREME: '#D72E29'
+      COLOR_EXTREME: '#D72E29',
     });
   });
 
   it('should expose autopulate options', () => {
     expect(Alert.OPTION_AUTOPOPULATE).to.exist;
-    expect(Alert.OPTION_AUTOPOPULATE)
-      .to.be.eql({
-        maxDepth: 1
-      });
+    expect(Alert.OPTION_AUTOPOPULATE).to.be.eql({
+      maxDepth: 1,
+    });
   });
-
 });

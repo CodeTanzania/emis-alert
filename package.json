@@ -1,13 +1,15 @@
 {
   "name": "@codetanzania/emis-alert",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A representation of an envelope(or payload) which carries disaster notifications(or warning) from source(s) to audience(s).",
   "main": "index.js",
   "scripts": {
     "test": "grunt test",
     "integration": "grunt integration",
     "dev": "BASE_PATH=./examples node ./examples/app.js",
-    "worker": "BASE_PATH=./examples node ./examples/worker.js"
+    "worker": "BASE_PATH=./examples node ./examples/worker.js",
+    "format": "prettier --write \"{lib,test,.}/**/*.js\" --loglevel silent",
+    "changelog": "changelog"
   },
   "repository": {
     "type": "git",
@@ -59,28 +61,14 @@
       {
         "resource": "AlertSource",
         "link": "https://emis-alert.herokuapp.com/v1/alertsources",
-        "scopes": [
-          "alertsource:*"
-        ],
-        "methods": [
-          "get",
-          "post",
-          "put",
-          "patch"
-        ]
+        "scopes": ["alertsource:*"],
+        "methods": ["get", "post", "put", "patch"]
       },
       {
         "resource": "Alert",
         "link": "https://emis-alert.herokuapp.com/v1/alerts",
-        "scopes": [
-          "alert:*"
-        ],
-        "methods": [
-          "get",
-          "post",
-          "put",
-          "patch"
-        ]
+        "scopes": ["alert:*"],
+        "methods": ["get", "post", "put", "patch"]
       }
     ]
   },
@@ -90,6 +78,7 @@
     "@lykmapipo/mongoose-test-helpers": ">=0.7.4",
     "@lykmapipo/postman": ">=0.8.0",
     "chai": "^4.2.0",
+    "generate-changelog": "^1.7.1",
     "grunt": "^1.0.4",
     "grunt-apidoc": "^0.11.0",
     "grunt-contrib-jshint": "^2.1.0",
@@ -98,16 +87,17 @@
     "jshint-stylish": "^2.2.1",
     "mocha": "^6.1.4",
     "mongoose": ">=5.5.11",
+    "prettier": "^1.17.1",
     "supertest": "^4.0.2"
   },
   "peerDependencies": {
     "mongoose": ">=5.5.11"
   },
   "dependencies": {
-    "@codetanzania/emis-feature": ">=1.3.0",
-    "@codetanzania/emis-incident-type": ">=1.4.0",
-    "@codetanzania/emis-role": ">=1.4.0",
-    "@codetanzania/emis-stakeholder": ">=1.4.0",
+    "@codetanzania/emis-feature": ">=1.4.0",
+    "@codetanzania/emis-incident-type": ">=1.5.0",
+    "@codetanzania/emis-role": ">=1.5.0",
+    "@codetanzania/emis-stakeholder": ">=1.5.0",
     "@lykmapipo/common": ">=0.19.0",
     "@lykmapipo/constants": ">=0.3.6",
     "@lykmapipo/env": ">=0.7.8",
