@@ -1,3 +1,22 @@
+#### 1.4.1 (2019-06-17)
+
+##### Chores
+
+* **package.json:**  update package version to 1.4.1 ([a0ea96cf](https://github.com/CodeTanzania/emis-alert/commit/a0ea96cfc4a7e01bff4d740786e7bb1184b38cf2))
+* **.gitignore:**  ignore .idea and .vscode configuration folders ([3dbace88](https://github.com/CodeTanzania/emis-alert/commit/3dbace88f4e8e26449c08d0898fe0f9a9a38f31c))
+* **deps:**  force latest version & audit fix ([208a6041](https://github.com/CodeTanzania/emis-alert/commit/208a60419e9a73de463f5ad40a448b5061056380))
+*  ignore neovim editor configs ([7051e424](https://github.com/CodeTanzania/emis-alert/commit/7051e424632531df39f4b628dbf6fade227a115b))
+*  remove unused jsbeautify file ([03e539a5](https://github.com/CodeTanzania/emis-alert/commit/03e539a5fda3dcf0158da2ff80d9dc3650463748))
+*  install and configure prettier ([48d482a0](https://github.com/CodeTanzania/emis-alert/commit/48d482a0ee184e093500fe3e87c1d4033e5a48fe))
+
+##### Bug Fixes
+
+* **seed:**  use prepareSeedCriteria to seed data ([878553cb](https://github.com/CodeTanzania/emis-alert/commit/878553cb11d7d52e346110347f6ce57d9f54da9e))
+
+##### Code Style Changes
+
+*  format files with prettier ([a75c6c01](https://github.com/CodeTanzania/emis-alert/commit/a75c6c01a511f63466fea523526e50a4955051a3))
+
 #### 1.4.0 (2019-05-30)
 
 ##### Chores
