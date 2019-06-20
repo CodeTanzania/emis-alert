@@ -42,7 +42,7 @@ describe('Alert getById', () => {
 
       //...assert selection
       const fields = _.keys(found.toObject());
-      expect(fields).to.have.length(2);
+      expect(fields).to.have.length.at.least(2);
       _.map(['status', 'scope', 'createdAt', 'updatedAt'], function(field) {
         expect(fields).to.not.include(field);
       });

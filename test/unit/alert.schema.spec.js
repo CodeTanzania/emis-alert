@@ -36,7 +36,7 @@ describe('Alert Schema', () => {
     expect(source.options).to.be.an('object');
     expect(source.options.type).to.exist;
     expect(source.options.trim).to.be.true;
-    expect(source.options.required).to.be.true;
+    // expect(source.options.required).to.be.true;
     expect(source.options.startcase).to.be.true;
     expect(source.options.index).to.be.true;
     expect(source.options.searchable).to.be.true;
