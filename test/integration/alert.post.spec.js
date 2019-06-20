@@ -3,15 +3,22 @@
 /* dependencies */
 const { expect } = require('chai');
 const { include } = require('@lykmapipo/include');
-const { clear } = require('@lykmapipo/mongoose-test-helpers');
-const { Alert } = include(__dirname, '..', '..');
+const { clear, create } = require('@lykmapipo/mongoose-test-helpers');
+const { Feature } = require('@codetanzania/emis-feature');
+const { Alert, AlertSource } = include(__dirname, '..', '..');
 
-describe('Alert Static Post', () => {
+describe.only('Alert Static Post', () => {
+  let alert = Alert.fakeExcept('source');
+  let source = AlertSource.fake();
+  let location = Feature.fake();
+
   before(done => clear(done));
 
-  let alert = Alert.fake();
+  before(done => create(source, location, done));
 
   it('should be able to post', done => {
+    alert.agency = source._id;
+    alert.locations = [location._id];
     Alert.post(alert, (error, created) => {
       expect(error).to.not.exist;
       expect(created).to.exist;

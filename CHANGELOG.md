@@ -1,3 +1,19 @@
+#### 1.5.0 (2019-06-20)
+
+##### Chores
+
+* **deps:**  force latest version & audit fix ([98b8d1a2](https://github.com/CodeTanzania/emis-alert/commit/98b8d1a2d892f23add7722efaf72d38208e53c68))
+
+##### New Features
+
+*  add agency and locations ([6990c827](https://github.com/CodeTanzania/emis-alert/commit/6990c827f9aed23e0a40c2503cab0bf0b8e76d15))
+*  add agency and locations fields ([ad418d41](https://github.com/CodeTanzania/emis-alert/commit/ad418d41d731f161e744fad514b2b638f0fe698c))
+*  refactor to use campaign on alert sending ([1f3c27d1](https://github.com/CodeTanzania/emis-alert/commit/1f3c27d16cdd02ec3e4b639c1b80f265ebf0568d))
+
+##### Code Style Changes
+
+*  fix unused imports ([2fe7877a](https://github.com/CodeTanzania/emis-alert/commit/2fe7877ac9086a90af0084e2d3063885b71f7148))
+
 #### 1.4.1 (2019-06-17)
 
 ##### Chores

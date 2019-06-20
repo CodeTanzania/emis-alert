@@ -1,6 +1,6 @@
 {
   "name": "@codetanzania/emis-alert",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "A representation of an envelope(or payload) which carries disaster notifications(or warning) from source(s) to audience(s).",
   "main": "index.js",
   "scripts": {
@@ -61,22 +61,35 @@
       {
         "resource": "AlertSource",
         "link": "https://emis-alert.herokuapp.com/v1/alertsources",
-        "scopes": ["alertsource:*"],
-        "methods": ["get", "post", "put", "patch"]
+        "scopes": [
+          "alertsource:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
       },
       {
         "resource": "Alert",
         "link": "https://emis-alert.herokuapp.com/v1/alerts",
-        "scopes": ["alert:*"],
-        "methods": ["get", "post", "put", "patch"]
+        "scopes": [
+          "alert:*"
+        ],
+        "methods": [
+          "get",
+          "post",
+          "put",
+          "patch"
+        ]
       }
     ]
   },
   "devDependencies": {
     "@benmaruchu/faker": "^4.2.1",
     "@codetanzania/majifix-common": "^0.12.4",
-    "@lykmapipo/mongoose-test-helpers": ">=0.7.4",
-    "@lykmapipo/postman": ">=0.8.0",
+    "@lykmapipo/mongoose-test-helpers": ">=0.7.13",
     "chai": "^4.2.0",
     "generate-changelog": "^1.7.1",
     "grunt": "^1.0.4",
@@ -84,32 +97,34 @@
     "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-mocha-test": "^0.13.3",
+    "handlebars": "^4.1.2",
     "jshint-stylish": "^2.2.1",
     "mocha": "^6.1.4",
-    "mongoose": ">=5.5.11",
-    "prettier": "^1.17.1",
+    "mongoose": ">=5.6.0",
+    "prettier": "^1.18.2",
     "supertest": "^4.0.2"
   },
   "peerDependencies": {
-    "mongoose": ">=5.5.11"
+    "mongoose": ">=5.6.0"
   },
   "dependencies": {
-    "@codetanzania/emis-feature": ">=1.4.0",
-    "@codetanzania/emis-incident-type": ">=1.5.0",
-    "@codetanzania/emis-role": ">=1.5.0",
-    "@codetanzania/emis-stakeholder": ">=1.5.0",
-    "@lykmapipo/common": ">=0.19.0",
-    "@lykmapipo/constants": ">=0.3.6",
-    "@lykmapipo/env": ">=0.7.8",
-    "@lykmapipo/express-common": ">=0.17.3",
-    "@lykmapipo/include": ">=0.2.4",
-    "@lykmapipo/mongoose-common": ">=0.23.4",
-    "@lykmapipo/mongoose-exportable": ">=0.3.3",
+    "@codetanzania/emis-feature": ">=1.4.3",
+    "@codetanzania/emis-incident-type": ">=1.5.1",
+    "@codetanzania/emis-role": ">=1.5.2",
+    "@codetanzania/emis-stakeholder": ">=1.9.0",
+    "@lykmapipo/common": ">=0.22.0",
+    "@lykmapipo/constants": ">=0.3.12",
+    "@lykmapipo/env": ">=0.9.2",
+    "@lykmapipo/express-common": ">=0.17.8",
+    "@lykmapipo/include": ">=0.2.5",
+    "@lykmapipo/mongoose-common": ">=0.25.6",
+    "@lykmapipo/mongoose-exportable": ">=0.3.5",
+    "@lykmapipo/postman": ">=0.10.0",
     "async": ">=3.0.1",
     "express": ">=4.17.1",
     "lodash": ">=4.17.11",
-    "mongoose-geojson-schemas": ">=0.10.5",
-    "mongoose-rest-actions": ">=0.28.1",
+    "mongoose-geojson-schemas": ">=0.10.7",
+    "mongoose-rest-actions": ">=0.28.5",
     "randomcolor": ">=0.5.4",
     "uuid": ">=3.3.2"
   },
